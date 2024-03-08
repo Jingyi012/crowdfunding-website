@@ -13,10 +13,10 @@ const route = useRoute();
 const currentRouteName = computed(() => {
   return route.name;
 });
-const currentDirectory = computed(() => {
-  let dir = route.path.split("/")[1];
-  return dir.charAt(0).toUpperCase() + dir.slice(1);
-});
+// const currentDirectory = computed(() => {
+//   let dir = route.path.split("/")[1];
+//   return dir.charAt(0).toUpperCase() + dir.slice(1);
+// });
 
 const minimizeSidebar = () => store.commit("sidebarMinimize");
 const toggleConfigurator = () => store.commit("toggleConfigurator");
@@ -38,7 +38,6 @@ const closeMenu = () => {
     <div class="px-3 py-1 container-fluid">
       <breadcrumbs
         :current-page="currentRouteName"
-        :current-directory="currentDirectory"
       />
 
       <div

@@ -7,6 +7,8 @@ import RTL from "../views/Rtl.vue";
 import Profile from "../views/Profile.vue";
 import Signup from "../views/Signup.vue";
 import Signin from "../views/Signin.vue";
+import AdminCrowdfundManage from "../views/AdminCrowdfundManage.vue";
+import UserManage from "../views/UserManage.vue";
 
 const routes = [
   {
@@ -54,6 +56,16 @@ const routes = [
     name: "Signup",
     component: Signup,
   },
+  {
+    path: "/crowdfundmanage",
+    name: "AdminCrowdfundManage",
+    component: AdminCrowdfundManage,
+  },
+  {
+    path: "/usermanage",
+    name: "UserManage",
+    component: UserManage,
+  }
 ];
 
 const router = createRouter({
