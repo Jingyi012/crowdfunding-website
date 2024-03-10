@@ -45,6 +45,25 @@ const temp = ref([
         target: 1000000
     }
 ]);
+
+const sortBy = ref(null);
+const sortOrder = ref('asc');
+
+function sortData(criteria) {
+    if (sortBy.value === criteria) {
+        sortOrder.value = sortOrder.value === 'asc' ? 'desc' : 'asc';
+    } else {
+        sortBy.value = criteria;
+        sortOrder.value = 'asc';
+    }
+
+    temp.value.sort((a, b) => {
+        const factor = sortOrder.value === 'asc' ? 1 : -1;
+        if (a[criteria] < b[criteria]) return -1 * factor;
+        if (a[criteria] > b[criteria]) return 1 * factor;
+        return 0;
+    });
+}
 </script>
 
 <template>
@@ -67,22 +86,70 @@ const temp = ref([
                     <thead>
                         <tr>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                Project
+                                <div class="d-flex align-items-center" @click="sortData('name')" style="cursor: pointer">
+                                    Project
+                                    <div class="d-flex flex-column ms-3">
+                                        <i class="fas fa-caret-up text-sm lh-1"
+                                            :class="{ 'text-dark': sortBy === 'name' && sortOrder === 'asc' }"></i>
+                                        <i class="fas fa-caret-down text-sm lh-1"
+                                            :class="{ 'text-dark': sortBy === 'name' && sortOrder === 'desc' }"></i>
+                                    </div>
+                                </div>
                             </th>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                Start Date <i class="fas fa-filter"></i>
+                                <div class="d-flex align-items-center" @click="sortData('startDate')" style="cursor: pointer">
+                                    Start Date
+                                    <div class="d-flex flex-column ms-3">
+                                        <i class="fas fa-caret-up text-sm lh-1"
+                                            :class="{ 'text-dark': sortBy === 'startDate' && sortOrder === 'asc' }"></i>
+                                        <i class="fas fa-caret-down text-sm lh-1"
+                                            :class="{ 'text-dark': sortBy === 'startDate' && sortOrder === 'desc' }"></i>
+                                    </div>
+                                </div>
                             </th>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                End Date <i class="fas fa-filter"></i>
+                                <div class="d-flex align-items-center" @click="sortData('endDate')" style="cursor: pointer">
+                                    End Date
+                                    <div class="d-flex flex-column ms-3">
+                                        <i class="fas fa-caret-up text-sm lh-1"
+                                            :class="{ 'text-dark': sortBy === 'endDate' && sortOrder === 'asc' }"></i>
+                                        <i class="fas fa-caret-down text-sm lh-1"
+                                            :class="{ 'text-dark': sortBy === 'endDate' && sortOrder === 'desc' }"></i>
+                                    </div>
+                                </div>
                             </th>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                Fund Raised <i class="fas fa-filter"></i>
+                                <div class="d-flex align-items-center" @click="sortData('fundRaised')" style="cursor: pointer">
+                                    Fund Raised
+                                    <div class="d-flex flex-column ms-3">
+                                        <i class="fas fa-caret-up text-sm lh-1"
+                                            :class="{ 'text-dark': sortBy === 'fundRaised' && sortOrder === 'asc' }"></i>
+                                        <i class="fas fa-caret-down text-sm lh-1"
+                                            :class="{ 'text-dark': sortBy === 'fundRaised' && sortOrder === 'desc' }"></i>
+                                    </div>
+                                </div>
                             </th>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                Target
+                                <div class="d-flex align-items-center" @click="sortData('target')" style="cursor: pointer">
+                                    Target
+                                    <div class="d-flex flex-column ms-3">
+                                        <i class="fas fa-caret-up text-sm lh-1"
+                                            :class="{ 'text-dark': sortBy === 'target' && sortOrder === 'asc' }"></i>
+                                        <i class="fas fa-caret-down text-sm lh-1"
+                                            :class="{ 'text-dark': sortBy === 'target' && sortOrder === 'desc' }"></i>
+                                    </div>
+                                </div>
                             </th>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                Status <i class="fas fa-filter"></i>
+                                <div class="d-flex align-items-center" @click="sortData('status')" style="cursor: pointer">
+                                    Status
+                                    <div class="d-flex flex-column ms-3">
+                                        <i class="fas fa-caret-up text-sm lh-1"
+                                            :class="{ 'text-dark': sortBy === 'status' && sortOrder === 'asc' }"></i>
+                                        <i class="fas fa-caret-down text-sm lh-1"
+                                            :class="{ 'text-dark': sortBy === 'status' && sortOrder === 'desc' }"></i>
+                                    </div>
+                                </div>
                             </th>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                 Action
@@ -110,8 +177,10 @@ const temp = ref([
                                 <h6 class="item">Ongoing</h6>
                             </td>
                             <td>
-                                <button type="button" class="btn mb-0" data-bs-toggle="modal" :data-bs-target="'#row' + index"><i class="fas fa-edit"></i></button>
-                                <button type="button" class="btn mb-0 ms-3" data-bs-toggle="modal" :data-bs-target="'#rowDelete' + index"><i class="fas fa-trash-alt"></i></button>
+                                <button type="button" class="btn mb-0" data-bs-toggle="modal"
+                                    :data-bs-target="'#row' + index"><i class="fas fa-edit"></i></button>
+                                <button type="button" class="btn mb-0 ms-3" data-bs-toggle="modal"
+                                    :data-bs-target="'#rowDelete' + index"><i class="fas fa-trash-alt"></i></button>
 
                                 <!-- Edit Modal -->
                                 <div class="modal fade" :id="'row' + index" tabindex="-1" aria-labelledby="ModalLabel"
@@ -127,19 +196,23 @@ const temp = ref([
                                                 <form>
                                                     <div class="mb-3">
                                                         <label for="name" class="form-label">Name:</label>
-                                                        <input type="text" class="form-control" id="name" placeholder="Enter name" :value="item.name">
+                                                        <input type="text" class="form-control" id="name"
+                                                            placeholder="Enter name" :value="item.name">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="startDate" class="form-label">Start Date:</label>
-                                                        <input type="date" class="form-control" id="startDate" :value="item.startDate">
+                                                        <input type="date" class="form-control" id="startDate"
+                                                            :value="item.startDate">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="endDate" class="form-label">End Date:</label>
-                                                        <input type="date" class="form-control" id="endDate" :value="item.endDate">
+                                                        <input type="date" class="form-control" id="endDate"
+                                                            :value="item.endDate">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="target" class="form-label">Target:</label>
-                                                        <input type="text" class="form-control" id="target" placeholder="Enter target" :value="item.target">
+                                                        <input type="text" class="form-control" id="target"
+                                                            placeholder="Enter target" :value="item.target">
                                                     </div>
                                                 </form>
                                             </div>
