@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+
 const temp = ref([
     {
         name: 'ABC Company',
@@ -50,10 +51,10 @@ const temp = ref([
     <div class="card m-4">
         <div class="card-header pb-0 d-flex justify-content-between align-items-center">
             <h5>Crowdfunding List</h5>
-            
+
             <div class="d-flex">
                 <div class="form-outline">
-                    <input type="search" id="form1" class="form-control rounded-start rounded-0" placeholder="name"/>
+                    <input type="search" id="form1" class="form-control rounded-start rounded-0" placeholder="name" />
                 </div>
                 <button id="search-button" type="button" class="btn btn-success rounded-0 rounded-end">
                     <i class="fas fa-search"></i>
@@ -109,7 +110,69 @@ const temp = ref([
                                 <h6 class="item">Ongoing</h6>
                             </td>
                             <td>
-                                <button class="btn mb-0">Edit</button>
+                                <button type="button" class="btn mb-0" data-bs-toggle="modal" :data-bs-target="'#row' + index"><i class="fas fa-edit"></i></button>
+                                <button type="button" class="btn mb-0 ms-3" data-bs-toggle="modal" :data-bs-target="'#rowDelete' + index"><i class="fas fa-trash-alt"></i></button>
+
+                                <!-- Edit Modal -->
+                                <div class="modal fade" :id="'row' + index" tabindex="-1" aria-labelledby="ModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="ModalLabel">Edit</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name:</label>
+                                                        <input type="text" class="form-control" id="name" placeholder="Enter name" :value="item.name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="startDate" class="form-label">Start Date:</label>
+                                                        <input type="date" class="form-control" id="startDate" :value="item.startDate">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="endDate" class="form-label">End Date:</label>
+                                                        <input type="date" class="form-control" id="endDate" :value="item.endDate">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="target" class="form-label">Target:</label>
+                                                        <input type="text" class="form-control" id="target" placeholder="Enter target" :value="item.target">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Delete Modal -->
+                                <div class="modal fade" :id="'rowDelete' + index" tabindex="-1"
+                                    aria-labelledby="ModalLabelD" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="ModalLabelD">Delete</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Confirm to delete "{{ item.name }}" ?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Delete</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                     </tbody>
