@@ -36,7 +36,7 @@ onMounted(() => {
 
   var gradientStroke1 = gradientLineChart.createLinearGradient(0, 230, 0, 50);
 
-  gradientStroke1.addColorStop(1, "rgba(203,12,159,0.2)");
+  gradientStroke1.addColorStop(1, "rgba(204, 255, 204,0.3)");
   gradientStroke1.addColorStop(0.2, "rgba(72,72,176,0.0)");
   gradientStroke1.addColorStop(0, "rgba(203,12,159,0)"); //purple colors
 
@@ -229,11 +229,7 @@ onMounted(() => {
     </div>
     <div class="p-3 card-body">
       <div class="chart">
-        <canvas
-          :id="props.id"
-          class="chart-canvas"
-          :height="props.height"
-        ></canvas>
+        <canvas :id="props.id" class="chart-canvas" :height="props.height"></canvas>
       </div>
     </div>
   </div>

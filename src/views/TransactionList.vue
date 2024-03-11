@@ -1,0 +1,167 @@
+<script setup>
+import Navbar from "@/examples/PageLayout/Navbar.vue";
+import { onBeforeUnmount, onBeforeMount } from "vue";
+import { useStore } from "vuex";
+import AppFooter from "@/examples/PageLayout/Footer.vue";
+
+const body = document.getElementsByTagName("body")[0];
+
+const store = useStore();
+onBeforeMount(() => {
+    store.state.hideConfigButton = true;
+    store.state.showNavbar = false;
+    store.state.showSidenav = false;
+    store.state.showFooter = false;
+    body.classList.remove("bg-gray-100");
+});
+onBeforeUnmount(() => {
+    store.state.hideConfigButton = false;
+    store.state.showNavbar = true;
+    store.state.showSidenav = true;
+    store.state.showFooter = true;
+    body.classList.add("bg-gray-100");
+});
+const TransactionList = [
+    {
+        hash: "0x3142Osdad1231nwe12414312",
+        sender: "0x2256dfq424efrt382341",
+        receiver: "0x2221erwer4efrt382341",
+        timestamp: "56 seconds ago",
+        amount: 78
+    },
+    {
+        hash: "0x3142Osdad1231nwe12414312",
+        sender: "0x2256dfq424efrt382341",
+        receiver: "0x2221erwer4efrt382341",
+        timestamp: "56 seconds ago",
+        amount: 78
+    },
+    {
+        hash: "0x3142O2132we333312414312",
+        sender: "0x2256dfq424efrt382341",
+        receiver: "0x2221123123efrt382341",
+        timestamp: "57 seconds ago",
+        amount: 123
+    },
+    {
+        hash: "0x311231232333nwe12414312",
+        sender: "0x2256dfq424e565656341",
+        receiver: "0x2221er12333332311341",
+        timestamp: "59 seconds ago",
+        amount: 344
+    },
+    {
+        hash: "0x3142Osdad1231nwe12414312",
+        sender: "0x2256dfq424efrt382341",
+        receiver: "0x2221erwer4efrt382341",
+        timestamp: "89 seconds ago",
+        amount: 71
+    },
+    {
+        hash: "0x3142Osdad1231nwe12414312",
+        sender: "0x2256dfq424efrt382341",
+        receiver: "0x2221erwer4efrt382341",
+        timestamp: "56 seconds ago",
+        amount: 78
+    },
+    {
+        hash: "0x3142Osdad1231nwe12414312",
+        sender: "0x2256dfq424efrt382341",
+        receiver: "0x2221erwer4efrt382341",
+        timestamp: "56 seconds ago",
+        amount: 78
+    }]
+</script>
+<template>
+    <div class="container top-0 position-sticky z-index-sticky">
+        <div class="row">
+            <div class="col-12">
+                <navbar isBlur="blur  border-radius-lg my-3 py-2 start-0 end-0 mx-4 shadow" v-bind:darkMode="true"
+                    isBtn="bg-gradient-success" />
+            </div>
+        </div>
+    </div>
+    <div class="page-header align-items-start min-vh-50 pt-5 pb-11 position-absolute top-0 w-100"
+        style="
+        background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signup-cover.jpg&quot;);
+        background-position: top;
+      "></div>
+    <main class="mt-0 main-content">
+        <section>
+
+            <div class="px-6 mt-6 container-fluid">
+                <div class="mt-8 row">
+                    <div class="col-12">
+                        <div class="card mb-4">
+                            <div class="card-header pb-0">
+                                <h3>Donation</h3>
+                            </div>
+                            <div class="card-body px-0 pt-0 pb-2">
+                                <div class="table-responsive p-0">
+                                    <table class="table align-items-center justify-content-center mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th
+                                                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                    Transaction ID
+                                                </th>
+                                                <th
+                                                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                    Sender
+                                                </th>
+                                                <th
+                                                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                    Receiver
+                                                </th>
+                                                <th
+                                                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                    Amount
+                                                </th>
+                                                <th
+                                                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                    Time
+                                                </th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr v-for="(item, index) in TransactionList" :key="index">
+                                                <td>
+                                                    <div class="d-flex px-1 py-1">
+                                                        <div
+                                                            class="d-flex px-2 align-items-center justify-content-center">
+                                                            <i class="rounded-circle me-2 ni ni-sound-wave"
+                                                                alt="hash"></i>
+                                                        </div>
+                                                        <div class="my-auto">
+                                                            <h6 class="mb-0 text-sm">{{ item.hash }}</h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <p class="text-sm font-weight-bold mb-0">{{ item.sender }}</p>
+                                                </td>
+                                                <td>
+                                                    <p class="text-sm font-weight-bold">{{ item.receiver }}</p>
+                                                </td>
+
+                                                <td>
+                                                    <h6 class="text-sm font-weight-bold">${{ item.amount }}</h6>
+                                                </td>
+                                                <td>
+                                                    <span class="text-xs font-weight-bold">{{ item.timestamp
+                                                        }}</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <app-footer />
+</template>

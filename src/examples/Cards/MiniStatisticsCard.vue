@@ -64,7 +64,7 @@ defineProps({
 </script>
 <template>
   <div class="mb-3 card">
-    <div class="p-3 card-body">
+    <div class="p-4 card-body">
       <div
         class="d-flex"
         :class="rowReverse ? '' : 'flex-row-reverse justify-content-between'"
@@ -92,7 +92,7 @@ defineProps({
             >
               {{ typeof title === "string" ? title : title.text }}
             </p>
-            <h5 :class="`mb-0 font-weight-bolder ${value.color}`">
+            <h5 :class="`mt-2 font-weight-bolder ${value.color}`">
               {{
                 (value && typeof value === "string") ||
                 (value && typeof value === "number")
