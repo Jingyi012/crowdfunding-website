@@ -27,7 +27,7 @@ const darkMode = computed(() => store.state.darkMode);
         <img :src="darkMode || sidebarType === 'bg-default' ? logoWhite : logo" class="navbar-brand-img h-100"
           alt="main_logo" />
 
-        <span class="ms-2 font-weight-bold me-2">Argon Dashboard 2</span>
+        <span class="ms-2 font-weight-bold me-2">XiLiJiJi</span>
       </router-link>
     </div>
 
