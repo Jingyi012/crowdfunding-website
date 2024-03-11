@@ -9,6 +9,8 @@ import Signup from "../views/Signup.vue";
 import Signin from "../views/Signin.vue";
 import AdminCrowdfundManage from "../views/AdminCrowdfundManage.vue";
 import UserManage from "../views/UserManage.vue";
+import Notification from "../views/Notification.vue";
+import TransactionList from "../views/TransactionList.vue";
 
 const routes = [
   {
@@ -65,7 +67,16 @@ const routes = [
     path: "/usermanage",
     name: "UserManage",
     component: UserManage,
-  }
+  },
+  {
+    path: "/notification",
+    name: "Notification",
+    component: Notification,
+  },{
+    path: "/transactionlist",
+    name: "Transactions",
+    component: TransactionList,
+  },
 ];
 
 const router = createRouter({

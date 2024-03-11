@@ -12,6 +12,25 @@ const temp = ref([
   { name: 'James Rodriguez', email: 'james@example.com', walletAddress: '0xd6bF91BBaC18F8ECbaF55C4d6663646aF9F02d94' },
   { name: 'Sophia Hernandez', email: 'sophia@example.com', walletAddress: '0x5C2186Fb225a15e06B89aB85C61A0a91f0FF8Cf6' }
 ]);
+
+const sortBy = ref(null);
+const sortOrder = ref('asc');
+
+function sortData(criteria) {
+    if (sortBy.value === criteria) {
+        sortOrder.value = sortOrder.value === 'asc' ? 'desc' : 'asc';
+    } else {
+        sortBy.value = criteria;
+        sortOrder.value = 'asc';
+    }
+
+    temp.value.sort((a, b) => {
+        const factor = sortOrder.value === 'asc' ? 1 : -1;
+        if (a[criteria] < b[criteria]) return -1 * factor;
+        if (a[criteria] > b[criteria]) return 1 * factor;
+        return 0;
+    });
+}
 </script>
 
 <template>
@@ -34,7 +53,13 @@ const temp = ref([
                     <thead>
                         <tr>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                User Name <i class="fas fa-filter"></i>
+                                <div class="d-flex align-items-center" @click="sortData('name')" style="cursor: pointer">
+                                    User Name 
+                                    <div class="d-flex flex-column ms-3">
+                                        <i class="fas fa-caret-up text-sm lh-1" :class="{'text-dark': sortBy === 'name' && sortOrder === 'asc'}"></i>
+                                        <i class="fas fa-caret-down text-sm lh-1" :class="{'text-dark': sortBy === 'name' && sortOrder === 'desc'}"></i>
+                                    </div>
+                                </div>
                             </th>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                 Email
@@ -77,7 +102,43 @@ const temp = ref([
                                 <h6 class="item">Ongoing</h6>
                             </td> -->
                             <td>
-                                <button class="btn mb-0">Edit</button>
+                                <button type="button" class="btn mb-0" data-bs-toggle="modal" :data-bs-target="'#row' + index"><i class="fas fa-edit"></i></button>
+
+                                <!-- Edit Modal -->
+                                <div class="modal fade" :id="'row' + index" tabindex="-1" aria-labelledby="ModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="ModalLabel">Edit</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name:</label>
+                                                        <input type="text" class="form-control" id="name" placeholder="Enter name" :value="item.name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="startDate" class="form-label">Email:</label>
+                                                        <input type="email" class="form-control" id="email" :value="item.email">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="endDate" class="form-label">Wallet Address:</label>
+                                                        <input type="text" class="form-control" id="walletAddress" :value="item.walletAddress">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </td>
                         </tr>
                     </tbody>
