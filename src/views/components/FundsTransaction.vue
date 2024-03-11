@@ -47,24 +47,25 @@ import ArgonButton from "@/components/ArgonButton.vue";
         >
           <div class="d-flex align-items-center">
             <argon-button
-              color="success"
+              color="dark"
               variant="outline"
               size="sm"
               class="btn-icon-only btn-rounded mb-0 me-3 d-flex align-items-center justify-content-center"
             >
-              <i class="fas fa-arrow-up" aria-hidden="true"></i>
+              <i class="fas fa-exclamation" aria-hidden="true"></i>
             </argon-button>
             <div class="d-flex flex-column">
-              <h6 class="mb-1 text-dark text-sm">Apple</h6>
-              <span class="text-xs">27 March 2024, at 04:30 AM</span>
+              <h6 class="mb-1 text-dark text-sm">Educate360</h6>
+              <span class="text-xs">26 March 2024, at 05:00 AM</span>
             </div>
           </div>
           <div
-            class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold"
+            class="d-flex align-items-center text-dark text-sm font-weight-bold"
           >
-            + $ 2,000
+            Pending
           </div>
         </li>
+        
       </ul>
       <h6 class="text-uppercase text-body text-xs font-weight-bolder my-3">
         Yesterday
@@ -83,14 +84,14 @@ import ArgonButton from "@/components/ArgonButton.vue";
               <i class="fas fa-arrow-up" aria-hidden="true"></i>
             </argon-button>
             <div class="d-flex flex-column">
-              <h6 class="mb-1 text-dark text-sm">Stripe</h6>
+              <h6 class="mb-1 text-dark text-sm">BizBoost</h6>
               <span class="text-xs">26 March 2024, at 13:45 PM</span>
             </div>
           </div>
           <div
             class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold"
           >
-            + $ 750
+            + 750 ETH
           </div>
         </li>
         <li
@@ -106,14 +107,14 @@ import ArgonButton from "@/components/ArgonButton.vue";
               <i class="fas fa-arrow-up" aria-hidden="true"></i>
             </argon-button>
             <div class="d-flex flex-column">
-              <h6 class="mb-1 text-dark text-sm">HubSpot</h6>
+              <h6 class="mb-1 text-dark text-sm">AI Technology</h6>
               <span class="text-xs">26 March 2024, at 12:30 PM</span>
             </div>
           </div>
           <div
             class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold"
           >
-            + $ 1,000
+            + 1,000 ETH
           </div>
         </li>
         <li
@@ -129,14 +130,14 @@ import ArgonButton from "@/components/ArgonButton.vue";
               <i class="fas fa-arrow-up" aria-hidden="true"></i>
             </argon-button>
             <div class="d-flex flex-column">
-              <h6 class="mb-1 text-dark text-sm">Creative Tim</h6>
+              <h6 class="mb-1 text-dark text-sm">AI for rakyat</h6>
               <span class="text-xs">26 March 2024, at 08:30 AM</span>
             </div>
           </div>
           <div
             class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold"
           >
-            + $ 2,500
+            + 2,500 ETH
           </div>
         </li>
         <li
@@ -144,22 +145,22 @@ import ArgonButton from "@/components/ArgonButton.vue";
         >
           <div class="d-flex align-items-center">
             <argon-button
-              color="dark"
+              color="success"
               variant="outline"
               size="sm"
               class="btn-icon-only btn-rounded mb-0 me-3 d-flex align-items-center justify-content-center"
             >
-              <i class="fas fa-exclamation" aria-hidden="true"></i>
+              <i class="fas fa-arrow-up" aria-hidden="true"></i>
             </argon-button>
             <div class="d-flex flex-column">
-              <h6 class="mb-1 text-dark text-sm">Webflow</h6>
-              <span class="text-xs">26 March 2024, at 05:00 AM</span>
+              <h6 class="mb-1 text-dark text-sm">Caring</h6>
+              <span class="text-xs">27 March 2024, at 04:30 AM</span>
             </div>
           </div>
           <div
-            class="d-flex align-items-center text-dark text-sm font-weight-bold"
+            class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold"
           >
-            Pending
+            + 2,000 ETH
           </div>
         </li>
       </ul>

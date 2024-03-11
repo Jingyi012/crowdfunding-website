@@ -6,10 +6,7 @@ import setNavPills from "@/assets/js/nav-pills.js";
 import setTooltip from "@/assets/js/tooltip.js";
 import ArgonButton from "@/components/ArgonButton.vue";
 import ArgonInput from "@/components/ArgonInput.vue";
-// import ProfileCard from "./components/ProfileCard.vue";
-// import TodoListCard from "./components/TodoListCard.vue";
-import CreditCard from "./components/CreditCard.vue";
-// import TransactionCard from "./components/TransactionCard.vue";
+// import CreditCard from "./components/CreditCard.vue";
 import FundsTransaction from "./components/FundsTransaction.vue";
 const body = document.getElementsByTagName("body")[0];
 
@@ -232,8 +229,7 @@ onBeforeUnmount(() => {
           </div>
         </div>
         <div class="col-md-4">
-          <CreditCard />
-          <br>
+          <!-- <CreditCard /> -->
           <FundsTransaction />
         </div>
         
