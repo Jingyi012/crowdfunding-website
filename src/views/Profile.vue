@@ -17,6 +17,7 @@ onMounted(() => {
   setTooltip();
 });
 onBeforeMount(() => {
+  store.state.layout = "profile-overview";
   store.state.imageLayout = "profile-overview";
   store.state.showNavbar = true;
   store.state.showFooter = true;
@@ -24,6 +25,7 @@ onBeforeMount(() => {
   body.classList.add("profile-overview");
 });
 onBeforeUnmount(() => {
+  store.state.layout = "default";
   store.state.isAbsolute = false;
   store.state.imageLayout = "default";
   store.state.showNavbar = true;
