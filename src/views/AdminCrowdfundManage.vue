@@ -3,42 +3,60 @@ import { ref } from 'vue';
 
 const temp = ref([
     {
+        campaignName: 'Educate360 ',
         name: 'ABC Company',
+        purpose: 'Education',
+        description: 'description ......',
         startDate: '21 Jan 2024',
         endDate: '21 Apr 2024',
         fundRaised: 23431,
         target: 1000000
     },
     {
+        campaignName: 'BizBoost',
         name: 'DEF Company',
+        purpose: 'Business',
+        description: 'description ......',
         startDate: '22 Jan 2024',
         endDate: '21 Jun 2024',
         fundRaised: 211131,
         target: 2000000
     },
     {
+        campaignName: 'Caring',
         name: 'GHI Company',
+        purpose: 'Charity',
+        description: 'description ......',
         startDate: '1 Jan 2024',
         endDate: '23 Apr 2024',
         fundRaised: 13121,
         target: 1000000
     },
     {
+        campaignName: 'Help Victim',
         name: 'JKL Company',
+        purpose: 'Charity',
+        description: 'description ......',
         startDate: '1 Jan 2024',
         endDate: '29 Apr 2024',
         fundRaised: 74199,
         target: 1000000
     },
     {
+        campaignName: 'AI Technology',
         name: 'MNO Company',
+        purpose: 'Business',
+        description: 'description ......',
         startDate: '1 Jan 2024',
         endDate: '16 Apr 2024',
         fundRaised: 99141,
         target: 1000000
     },
     {
+        campaignName: 'AI for rakyat',
         name: 'PQR Company',
+        purpose: 'Education',
+        description: 'description ......',
         startDate: '1 Jan 2024',
         endDate: '16 Apr 2024',
         fundRaised: 99141,
@@ -86,18 +104,32 @@ function sortData(criteria) {
                     <thead>
                         <tr>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                <div class="d-flex align-items-center" @click="sortData('name')" style="cursor: pointer">
-                                    Project
+                                <div class="d-flex align-items-center" @click="sortData('campaignName')"
+                                    style="cursor: pointer">
+                                    Campaign
                                     <div class="d-flex flex-column ms-3">
                                         <i class="fas fa-caret-up text-sm lh-1"
-                                            :class="{ 'text-dark': sortBy === 'name' && sortOrder === 'asc' }"></i>
+                                            :class="{ 'text-dark': sortBy === 'campaignName' && sortOrder === 'asc' }"></i>
                                         <i class="fas fa-caret-down text-sm lh-1"
-                                            :class="{ 'text-dark': sortBy === 'name' && sortOrder === 'desc' }"></i>
+                                            :class="{ 'text-dark': sortBy === 'campaignName' && sortOrder === 'desc' }"></i>
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                <div class="d-flex align-items-center" @click="sortData('purpose')"
+                                    style="cursor: pointer">
+                                    Purpose
+                                    <div class="d-flex flex-column ms-3">
+                                        <i class="fas fa-caret-up text-sm lh-1"
+                                            :class="{ 'text-dark': sortBy === 'purpose' && sortOrder === 'asc' }"></i>
+                                        <i class="fas fa-caret-down text-sm lh-1"
+                                            :class="{ 'text-dark': sortBy === 'purpose' && sortOrder === 'desc' }"></i>
                                     </div>
                                 </div>
                             </th>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                <div class="d-flex align-items-center" @click="sortData('startDate')" style="cursor: pointer">
+                                <div class="d-flex align-items-center" @click="sortData('startDate')"
+                                    style="cursor: pointer">
                                     Start Date
                                     <div class="d-flex flex-column ms-3">
                                         <i class="fas fa-caret-up text-sm lh-1"
@@ -108,7 +140,8 @@ function sortData(criteria) {
                                 </div>
                             </th>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                <div class="d-flex align-items-center" @click="sortData('endDate')" style="cursor: pointer">
+                                <div class="d-flex align-items-center" @click="sortData('endDate')"
+                                    style="cursor: pointer">
                                     End Date
                                     <div class="d-flex flex-column ms-3">
                                         <i class="fas fa-caret-up text-sm lh-1"
@@ -119,7 +152,8 @@ function sortData(criteria) {
                                 </div>
                             </th>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                <div class="d-flex align-items-center" @click="sortData('fundRaised')" style="cursor: pointer">
+                                <div class="d-flex align-items-center" @click="sortData('fundRaised')"
+                                    style="cursor: pointer">
                                     Fund Raised
                                     <div class="d-flex flex-column ms-3">
                                         <i class="fas fa-caret-up text-sm lh-1"
@@ -130,7 +164,8 @@ function sortData(criteria) {
                                 </div>
                             </th>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                <div class="d-flex align-items-center" @click="sortData('target')" style="cursor: pointer">
+                                <div class="d-flex align-items-center" @click="sortData('target')"
+                                    style="cursor: pointer">
                                     Target
                                     <div class="d-flex flex-column ms-3">
                                         <i class="fas fa-caret-up text-sm lh-1"
@@ -141,7 +176,8 @@ function sortData(criteria) {
                                 </div>
                             </th>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                <div class="d-flex align-items-center" @click="sortData('status')" style="cursor: pointer">
+                                <div class="d-flex align-items-center" @click="sortData('status')"
+                                    style="cursor: pointer">
                                     Status
                                     <div class="d-flex flex-column ms-3">
                                         <i class="fas fa-caret-up text-sm lh-1"
@@ -159,7 +195,10 @@ function sortData(criteria) {
                     <tbody>
                         <tr v-for="(item, index) in temp" :key="index">
                             <td>
-                                <h6 class="item ps-3">{{ item.name }}</h6>
+                                <h6 class="item ps-3">{{ item.campaignName }}</h6>
+                            </td>
+                            <td>
+                                <h6 class="item ps-3">{{ item.purpose }}</h6>
                             </td>
                             <td>
                                 <h6 class="item">{{ item.startDate }}</h6>
@@ -178,6 +217,8 @@ function sortData(criteria) {
                             </td>
                             <td>
                                 <button type="button" class="btn mb-0" data-bs-toggle="modal"
+                                    :data-bs-target="'#row' + index"><i class="fas fa-info-circle"></i></button>
+                                <button type="button" class="btn mb-0 ms-3" data-bs-toggle="modal"
                                     :data-bs-target="'#row' + index"><i class="fas fa-edit"></i></button>
                                 <button type="button" class="btn mb-0 ms-3" data-bs-toggle="modal"
                                     :data-bs-target="'#rowDelete' + index"><i class="fas fa-trash-alt"></i></button>
@@ -195,9 +236,31 @@ function sortData(criteria) {
                                             <div class="modal-body">
                                                 <form>
                                                     <div class="mb-3">
-                                                        <label for="name" class="form-label">Name:</label>
-                                                        <input type="text" class="form-control" id="name"
-                                                            placeholder="Enter name" :value="item.name">
+                                                        <label for="campaignName" class="form-label">Campaign Name:</label>
+                                                        <input type="text" class="form-control" id="campaignName"
+                                                            placeholder="Enter campaign name" :value="item.campaignName">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="purpose" class="form-label">Purpose:</label>
+                                                        <select class="form-select" id="purpose">
+                                                            <option :selected="item.purpose === 'Charity'">Charity</option>
+                                                            <option :selected="item.purpose === 'Business'">Business</option>
+                                                            <option :selected="item.purpose === 'Education'">Education</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="description" class="form-label">Description:</label>
+                                                        <input type="text" class="form-control" id="description"
+                                                            placeholder="Enter name" :value="item.description">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="poster" class="form-label">Poster:</label>
+                                                        <input type="file" class="form-control" id="poster">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="organizationName" class="form-label">Organization Name:</label>
+                                                        <input type="text" class="form-control" id="organizationName"
+                                                            placeholder="Enter organization name" :value="item.name">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="startDate" class="form-label">Start Date:</label>
