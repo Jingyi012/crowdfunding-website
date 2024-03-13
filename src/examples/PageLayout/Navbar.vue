@@ -33,8 +33,7 @@ defineProps({
       <div class="collapse navbar-collapse" id="navigation">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <router-link class="nav-link d-flex align-items-center me-2 active" aria-current="page"
-              to="/dashboard-default">
+            <router-link class="nav-link d-flex align-items-center me-2 active" aria-current="page" to="/crowdfundlist">
               <i class="fa fa-chart-pie opacity-6 me-1" aria-hidden="true"
                 :class="isBlur ? 'text-dark' : 'text-white'"></i>
               CrowdFund
@@ -42,7 +41,8 @@ defineProps({
           </li>
           <li class="nav-item">
             <router-link class="nav-link me-2" to="/transactionlist">
-              <i class="fa fa-exchange opacity-6 me-1" aria-hidden="true" :class="isBlur ? 'text-dark' : 'text-white'"></i>
+              <i class="fa fa-exchange opacity-6 me-1" aria-hidden="true"
+                :class="isBlur ? 'text-dark' : 'text-white'"></i>
               Transaction
             </router-link>
           </li>

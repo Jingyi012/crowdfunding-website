@@ -74,7 +74,7 @@ onBeforeUnmount(() => {
               <div
                 class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden"
                 style="
-                  background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg&quot;);
+                  background-image: url(&quot;https://media.istockphoto.com/id/1428262436/vector/crowdfunding-isolated-cartoon-vector-illustrations.jpg?s=612x612&w=0&k=20&c=354FblurcDwrEvmneMTuZrzHNBa4o7K3RTXmfPnI-3A=&quot;);
                   background-size: cover;
                 ">
                 <span class="mask bg-gradient-success opacity-6"></span>
