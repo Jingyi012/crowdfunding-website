@@ -145,7 +145,7 @@ const transactionList = [{
             </div>
             <div class="row mt-4">
               <div class="col-lg-7 mb-lg-0 mb-4">
-                <div class="card">
+                <div class="card px-3">
                   <div class="p-3 pb-0 card-header">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                       <h6 class="mb-0">Donation</h6>
@@ -154,7 +154,7 @@ const transactionList = [{
                       </router-link>
                     </div>
                   </div>
-                  <div class="table-responsive">
+                  <div class="table-responsive pe-3">
                     <table class="table align-items-center">
                       <tbody>
                         <tr v-for="(transaction, index) in transactionList" :key="index">
@@ -182,7 +182,7 @@ const transactionList = [{
                             </div>
                           </td>
                           <td class="text-sm align-middle">
-                            <div class="text-center col">
+                            <div class="text-end col">
                               <h6 class="mb-0 text-sm">{{ transaction.timestamp }} seconds ago</h6>
                             </div>
                           </td>

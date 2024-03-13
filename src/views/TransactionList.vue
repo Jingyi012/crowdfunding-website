@@ -7,6 +7,7 @@ import AppFooter from "@/examples/PageLayout/Footer.vue";
 const body = document.getElementsByTagName("body")[0];
 
 const store = useStore();
+
 onBeforeMount(() => {
     store.state.hideConfigButton = true;
     store.state.showNavbar = false;
@@ -56,20 +57,6 @@ const TransactionList = [
         receiver: "0x2221erwer4efrt382341",
         timestamp: "89 seconds ago",
         amount: 71
-    },
-    {
-        hash: "0x3142Osdad1231nwe12414312",
-        sender: "0x2256dfq424efrt382341",
-        receiver: "0x2221erwer4efrt382341",
-        timestamp: "56 seconds ago",
-        amount: 78
-    },
-    {
-        hash: "0x3142Osdad1231nwe12414312",
-        sender: "0x2256dfq424efrt382341",
-        receiver: "0x2221erwer4efrt382341",
-        timestamp: "56 seconds ago",
-        amount: 78
     }]
 </script>
 <template>
@@ -81,8 +68,7 @@ const TransactionList = [
             </div>
         </div>
     </div>
-    <div class="page-header align-items-start min-vh-50 pt-5 pb-11 position-absolute top-0 w-100"
-        style="
+    <div class="page-header align-items-start min-vh-50 pt-5 pb-11 position-absolute top-0 w-100" style="
         background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signup-cover.jpg&quot;);
         background-position: top;
       "></div>
@@ -94,71 +80,92 @@ const TransactionList = [
                     <div class="col-12">
                         <div class="card mb-4">
                             <div class="card-header pb-0">
-                                <h3>Donation</h3>
+                                <h3 class="mb-3">Donation</h3>
+                                <div class="pe-md-3 d-flex align-items-center ms-md-auto">
+                                    <div class="input-group">
+                                        <span class="input-group-text text-body">
+                                            <i class="fas fa-search" aria-hidden="true"></i>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Type here..." />
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body px-0 pt-0 pb-2">
-                                <div class="table-responsive p-0">
-                                    <table class="table align-items-center justify-content-center mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th
-                                                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                    Transaction ID
-                                                </th>
-                                                <th
-                                                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                    Sender
-                                                </th>
-                                                <th
-                                                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                    Receiver
-                                                </th>
-                                                <th
-                                                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                    Amount
-                                                </th>
-                                                <th
-                                                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                    Time
-                                                </th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr v-for="(item, index) in TransactionList" :key="index">
-                                                <td>
-                                                    <div class="d-flex px-1 py-1">
-                                                        <div
-                                                            class="d-flex px-2 align-items-center justify-content-center">
-                                                            <i class="rounded-circle me-2 ni ni-sound-wave"
-                                                                alt="hash"></i>
+                            <div class="card-body px-0 pt-2 pb-2">
+                                <div class="px-lg-3 px-4">
+                                    <div class="table-responsive p-0">
+                                        <table class="table align-items-center justify-content-center mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th
+                                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                        Transaction ID
+                                                    </th>
+                                                    <th
+                                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                        Sender
+                                                    </th>
+                                                    <th
+                                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                        Receiver
+                                                    </th>
+                                                    <th
+                                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                        Amount
+                                                    </th>
+                                                    <th
+                                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                        Time
+                                                    </th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr v-for="(item, index) in TransactionList" :key="index">
+                                                    <td>
+                                                        <div class="d-flex px-1 py-1">
+                                                            <div
+                                                                class="d-flex px-2 align-items-center justify-content-center">
+                                                                <i class="rounded-circle me-2 ni ni-sound-wave"
+                                                                    alt="hash"></i>
+                                                            </div>
+                                                            <div class="my-auto">
+                                                                <h6 class="mb-0 text-sm">{{ item.hash }}</h6>
+                                                            </div>
                                                         </div>
-                                                        <div class="my-auto">
-                                                            <h6 class="mb-0 text-sm">{{ item.hash }}</h6>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="text-sm font-weight-bold mb-0">{{ item.sender }}</p>
-                                                </td>
-                                                <td>
-                                                    <p class="text-sm font-weight-bold">{{ item.receiver }}</p>
-                                                </td>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-sm font-weight-bold my-2">{{ item.sender }}</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-sm font-weight-bold my-2">{{ item.receiver }}</p>
+                                                    </td>
 
-                                                <td>
-                                                    <h6 class="text-sm font-weight-bold">${{ item.amount }}</h6>
-                                                </td>
-                                                <td>
-                                                    <span class="text-xs font-weight-bold">{{ item.timestamp
-                                                        }}</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                                    <td>
+                                                        <h6 class="text-sm font-weight-bold my-2">${{ item.amount }}
+                                                        </h6>
+                                                    </td>
+                                                    <td>
+                                                        <span class="text-xs font-weight-bold my-2">{{ item.timestamp
+                                                            }}</span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div>
+                <div class="column d-flex justify-content-center">
+                    <button type="button" class="btn p-3 d-flex  justify-content-center align-items-center">
+                        <i class="ni ni-bold-left"></i>
+                    </button>
+                    <button type="button" class="btn p-3 d-flex  justify-content-center align-items-center">
+                        <i class="ni ni-bold-right"></i>
+                    </button>
                 </div>
             </div>
         </section>
