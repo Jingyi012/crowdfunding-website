@@ -12,6 +12,7 @@ import Signup from "../views/Signup.vue";
 import Tables from "../views/Tables.vue";
 import TransactionList from "../views/TransactionList.vue";
 import CrowdfundList from "../views/CrowdfundList.vue";
+import Transaction from "../views/transaction.vue";
 
 import UserManage from "../views/UserManage.vue";
 import VirtualReality from "../views/VirtualReality.vue";
@@ -94,6 +95,16 @@ const routes = [
     path: "/crowdfundlist",
     name: "CrowdfundList",
     component: CrowdfundList,
+  },
+  {
+    path: "/transaction",
+    name: "transaction",
+    component: Transaction,
+  },
+  {
+    path: "/transaction",
+    name: "transaction",
+    component: Transaction,
   },
 ];
 
