@@ -12,7 +12,7 @@ import setTooltip from "@/assets/js/tooltip.js";
 const body = document.getElementsByTagName("body")[0];
 
 const store = useStore();
-const showdonation = ref(true);
+const showdonation = ref(false);
 onMounted(() => {
   store.state.isAbsolute = true;
   setNavPills();

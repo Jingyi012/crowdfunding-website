@@ -64,7 +64,7 @@ const TransactionList = [
                     <div class="col-12">
                         <div class="card mb-4">
                             <div class="card-header pb-0">
-                                <h3>Donation</h3>
+                                <h3>Transaction History</h3>
                             </div>
                             <div class="card-body px-0 pt-0 pb-2">
                                 <div class="table-responsive p-0">
