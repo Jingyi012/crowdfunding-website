@@ -15,7 +15,7 @@ const temp = ref([
       <div class="row">
         <div class="col-md-6">
           <h6 class="mb-0">Donator List</h6>
-          <p>Thank you for being a hero</p>
+          <p>5 donators</p>
         </div>
         <div class="col-md-6 d-flex justify-content-end align-items-center">
           <i class="far fa-calendar-alt me-2" aria-hidden="true"></i>

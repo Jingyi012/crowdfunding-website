@@ -11,6 +11,7 @@ import AdminCrowdfundManage from "../views/AdminCrowdfundManage.vue";
 import UserManage from "../views/UserManage.vue";
 import Notification from "../views/Notification.vue";
 import TransactionList from "../views/TransactionList.vue";
+import Transaction from "../views/transaction.vue";
 
 const routes = [
   {
@@ -76,6 +77,11 @@ const routes = [
     path: "/transactionlist",
     name: "Transactions",
     component: TransactionList,
+  },
+  {
+    path: "/transaction",
+    name: "transaction",
+    component: Transaction,
   },
 ];
 
