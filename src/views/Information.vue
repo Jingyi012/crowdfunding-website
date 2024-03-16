@@ -1,12 +1,9 @@
 <script setup>
-import { onBeforeMount, onMounted, onBeforeUnmount } from "vue";
+import { onBeforeMount, onBeforeUnmount, onMounted } from "vue";
 import { useStore } from "vuex";
 
 import setNavPills from "@/assets/js/nav-pills.js";
 import setTooltip from "@/assets/js/tooltip.js";
-import EditProfile from "./components/EditProfile.vue";
-
-
 const body = document.getElementsByTagName("body")[0];
 
 const store = useStore();
@@ -17,15 +14,13 @@ onMounted(() => {
   setTooltip();
 });
 onBeforeMount(() => {
-  store.state.layout = "profile-overview";
   store.state.imageLayout = "profile-overview";
-  store.state.showNavbar = true;
+  store.state.showNavbar = false;
   store.state.showFooter = true;
   store.state.hideConfigButton = true;
   body.classList.add("profile-overview");
 });
 onBeforeUnmount(() => {
-  store.state.layout = "default";
   store.state.isAbsolute = false;
   store.state.imageLayout = "default";
   store.state.showNavbar = true;
@@ -33,7 +28,9 @@ onBeforeUnmount(() => {
   store.state.hideConfigButton = false;
   body.classList.remove("profile-overview");
 });
+
 </script>
+
 <template>
   <main>
     <div class="container-fluid">
@@ -143,11 +140,27 @@ onBeforeUnmount(() => {
     </div>
     <div class="py-4 container-fluid">
       <div class="row">
-        <EditProfile />
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header pb-0">
+              <div class="d-flex align-items-center">
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="text-uppercase text-sm">Information</p>
+              
+              <argon-button color="success" size="sm" class="ms-auto" style="float: right;">Submit</argon-button>
+
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-4">
+          <!-- <CreditCard /> -->
+        </div>
       </div>
-
     </div>
-
   </main>
-</template>
 
+
+</template>

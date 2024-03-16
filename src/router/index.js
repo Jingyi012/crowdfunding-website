@@ -1,15 +1,20 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Dashboard from "../views/Dashboard.vue";
-import Tables from "../views/Tables.vue";
-import Billing from "../views/Billing.vue";
-import VirtualReality from "../views/VirtualReality.vue";
-import RTL from "../views/Rtl.vue";
-import Profile from "../views/Profile.vue";
-import Signup from "../views/Signup.vue";
-import Signin from "../views/Signin.vue";
 import AdminCrowdfundManage from "../views/AdminCrowdfundManage.vue";
-import UserManage from "../views/UserManage.vue";
+import Billing from "../views/Billing.vue";
+import createCampaign from "../views/CreateCampaign.vue";
+import Dashboard from "../views/Dashboard.vue";
+import Information from "../views/Information.vue";
+import Notification from "../views/Notification.vue";
+import Profile from "../views/Profile.vue";
+import RTL from "../views/Rtl.vue";
+import Signin from "../views/Signin.vue";
+import Signup from "../views/Signup.vue";
+import Tables from "../views/Tables.vue";
+import TransactionList from "../views/TransactionList.vue";
+import CrowdfundList from "../views/CrowdfundList.vue";
 
+import UserManage from "../views/UserManage.vue";
+import VirtualReality from "../views/VirtualReality.vue";
 const routes = [
   {
     path: "/",
@@ -65,7 +70,31 @@ const routes = [
     path: "/usermanage",
     name: "UserManage",
     component: UserManage,
+  },
+  {
+    path: "/notification",
+    name: "Notification",
+    component: Notification,
+  },
+  {
+    path: "/transactionlist",
+    name: "Transactions",
+    component: TransactionList,
   }
+  ,{
+    path: "/createCampaign",
+    name: "createCampaign",
+    component: createCampaign,
+  },{
+    path: "/info",
+    name: "Information",
+    component: Information,
+  },
+  {
+    path: "/crowdfundlist",
+    name: "CrowdfundList",
+    component: CrowdfundList,
+  },
 ];
 
 const router = createRouter({
