@@ -33,6 +33,13 @@ const getRoute = () => {
           </template>
         </sidenav-item>
       </li>
+      <li class="nav-item">
+        <sidenav-item to="/createCampaign" :class="getRoute() === 'createCampaign' ? 'active' : ''" navText="Create">
+          <template v-slot:icon>
+            <i class="fas fa-plus text-sm text-dark opacity-10 position-absolute"></i>
+          </template>
+        </sidenav-item>
+      </li>
       <li class="mt-3 nav-item">
         <h6 class="text-xs ps-4 text-uppercase font-weight-bolder opacity-6 ms-2">
           User
