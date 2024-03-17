@@ -124,14 +124,14 @@ function sortData(criteria) {
                     <thead>
                         <tr>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                <div class="d-flex align-items-center" @click="sortData('name')"
+                                <div class="d-flex align-items-center" @click="sortData('username')"
                                     style="cursor: pointer">
                                     User Name
                                     <div class="d-flex flex-column ms-3">
                                         <i class="fas fa-caret-up text-sm lh-1"
-                                            :class="{ 'text-dark': sortBy === 'name' && sortOrder === 'asc' }"></i>
+                                            :class="{ 'text-dark': sortBy === 'username' && sortOrder === 'asc' }"></i>
                                         <i class="fas fa-caret-down text-sm lh-1"
-                                            :class="{ 'text-dark': sortBy === 'name' && sortOrder === 'desc' }"></i>
+                                            :class="{ 'text-dark': sortBy === 'username' && sortOrder === 'desc' }"></i>
                                     </div>
                                 </div>
                             </th>
