@@ -216,8 +216,8 @@ function sortData(criteria) {
                                 <h6 class="item">Ongoing</h6>
                             </td>
                             <td>
-                                <button type="button" class="btn mb-0" data-bs-toggle="modal"
-                                    :data-bs-target="'#row' + index"><i class="fas fa-info-circle"></i></button>
+                                <router-link class="btn mb-0" to="/billing"><i
+                                        class="fas fa-info-circle"></i></router-link>
                                 <button type="button" class="btn mb-0 ms-3" data-bs-toggle="modal"
                                     :data-bs-target="'#row' + index"><i class="fas fa-edit"></i></button>
                                 <button type="button" class="btn mb-0 ms-3" data-bs-toggle="modal"
@@ -226,16 +226,17 @@ function sortData(criteria) {
                                 <!-- Edit Modal -->
                                 <div class="modal fade" :id="'row' + index" tabindex="-1" aria-labelledby="ModalLabel"
                                     aria-hidden="true">
-                                    <div class="modal-dialog">
+                                    <div class="modal-dialog" style="max-width: 600px !important">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="ModalLabel">Edit</h1>
+                                                <h1 class="modal-title fs-5" id="ModalLabel"><i class="fas fa-edit"></i>
+                                                    Edit</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
                                                 <form>
-                                                    <div class="mb-3">
+                                                    <!-- <div class="mb-3">
                                                         <label for="campaignName" class="form-label">Campaign Name:</label>
                                                         <input type="text" class="form-control" id="campaignName"
                                                             placeholder="Enter campaign name" :value="item.campaignName">
@@ -276,8 +277,137 @@ function sortData(criteria) {
                                                         <label for="target" class="form-label">Target:</label>
                                                         <input type="text" class="form-control" id="target"
                                                             placeholder="Enter target" :value="item.target">
+                                                    </div> -->
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label for="investmentName"
+                                                                class="form-label">Investment Name</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Enter investment name" :value="item.campaignName"/>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="investmentPoster"
+                                                                class="form-label">Investment Poster (Image File Format)</label>
+                                                            <br>
+                                                            <input type="file" class="form-control"
+                                                                id="investmentPoster" accept="image/*" />
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="investmentPurpose"
+                                                                class="form-label">Investment Purpose</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Enter investment description" :value="item.purpose"/>
+
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="investmentOrganization"
+                                                                class="form-label">Investment Organization
+                                                                Name</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Enter organization name"/>
+                                                        </div>
                                                     </div>
+
+                                                    <hr class="horizontal dark" />
+
+                                                    <p class="text-uppercase text-sm">Investment Details</p>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label for="investmentPricePerShare"
+                                                                class="form-label">Investment Price Per Share
+                                                                (ETH)</label>
+                                                            <input type="number" step="0.01" class="form-control"
+                                                                placeholder="0.00"/>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="investmentTargetAmount"
+                                                                class="form-label">Investment Target Amount
+                                                                (ETH)</label>
+                                                            <input type="number" step="0.01" class="form-control"
+                                                                placeholder="0.00"/>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="investmentDeadline"
+                                                                class="form-label">Investment Deadline (dd/mm/yy
+                                                                hh:mm)</label>
+                                                            <input type="datetime-local" class="form-control"
+                                                                placeholder="Select deadline" :value="item.endDate"/>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="investmentValuation"
+                                                                class="form-label">Investment Valuation</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Enter valuation"/>
+                                                        </div>
+                                                    </div>
+
+                                                    <hr class="horizontal dark" />
+
+                                                    <p class="text-uppercase text-sm">Investment Breakdown</p>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label for="minInvestment"
+                                                                class="form-label">Minimum Investment
+                                                                (ETH)</label>
+                                                            <input type="number" step="0.01" class="form-control"
+                                                                placeholder="0.00"/>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="maxInvestment"
+                                                                class="form-label">Maximum Investment
+                                                                (ETH)</label>
+                                                            <input type="number" step="0.01" class="form-control"
+                                                                placeholder="0.00"/>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="minSharesOffered"
+                                                                class="form-label">Minimum Number of Shares
+                                                                Offered</label>
+                                                            <input type="number" class="form-control"
+                                                                placeholder="Enter minimum shares"/>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="maxSharesOffered"
+                                                                class="form-label">Maximum Number of Shares
+                                                                Offered</label>
+                                                            <input type="number" class="form-control"
+                                                                placeholder="Enter maximum shares"/>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="offeringType"
+                                                                class="form-label">Offering Type</label>
+                                                            <select class="form-control" id="offeringType">
+                                                                <option value="---Select offering type---" selected
+                                                                    disabled>--Select offering type--</option>
+                                                                <option value="public">Public</option>
+                                                                <option value="private">Private</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="assetType" class="form-label">Asset
+                                                                Type</label>
+                                                            <select class="form-control" id="assetType">
+                                                                <option value="---Select asset type---" selected
+                                                                    disabled>--Select asset type--</option>
+                                                                <option value="equity">Equity</option>
+                                                                <option value="debt">Debt</option>
+                                                                <option value="real estate">Real Estate</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="sharesOffered" class="form-label">Shares
+                                                                Offered</label>
+                                                            <select class="form-control" id="sharesOffered">
+                                                                <option value="---Select shares offered---" selected
+                                                                    disabled>--Select shares offered--</option>
+                                                                <option value="common">Common</option>
+                                                                <option value="preferred">Preferred</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
                                                 </form>
+
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
@@ -294,7 +424,8 @@ function sortData(criteria) {
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="ModalLabelD">Delete</h1>
+                                                <h1 class="modal-title fs-5" id="ModalLabelD"><i
+                                                        class="fas fa-trash-alt"></i> Delete</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>

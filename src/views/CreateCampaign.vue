@@ -63,7 +63,7 @@ onBeforeUnmount(() => {
         <div class="col-md-6">
             <label for="investmentPoster" class="form-control-label">Investment Poster (Image File Format)</label>
             <br>
-            <input type="file" class="form-control-file" id="investmentPoster" accept="image/*" />
+            <input type="file" class="form-control" id="investmentPoster" accept="image/*" />
         </div>
         <div class="col-md-6">
             <label for="investmentPurpose" class="form-control-label">Investment Purpose</label>
