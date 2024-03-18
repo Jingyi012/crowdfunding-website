@@ -47,19 +47,19 @@ onBeforeUnmount(() => {
       <div class="card shadow-lg mt-n6">
         <div class="card-header pb-0">
           <div class="d-flex align-items-center">
-            <p class="mb-0">Create Investment</p>
+            <p class="mb-0">Create Campaign</p>
             <!-- <argon-button color="success" size="sm" class="ms-auto">Settings</argon-button> -->
           </div>
         </div>
         <div class="card-body">
-          <p class="text-uppercase text-sm">Investment General Information</p>
+          <p class="text-uppercase text-sm">General Information</p>
           <div class="row">
             <div class="col-md-6">
-              <label for="investmentName" class="form-control-label">Investment Name</label>
+              <label for="investmentName" class="form-control-label">Campaign Name</label>
               <argon-input type="text" placeholder="Enter investment name"></argon-input>
             </div>
             <div class="col-md-6">
-              <label for="investmentPoster" class="form-control-label">Investment Poster (Image
+              <label for="investmentPoster" class="form-control-label">Campaign Poster (Image
                 File Format)</label>
               <br>
               <input type="file" class="form-control" id="investmentPoster" accept="image/*" />
@@ -70,9 +70,9 @@ onBeforeUnmount(() => {
 
             </div>
             <div class="col-md-6">
-              <label for="investmentOrganization" class="form-control-label">Investment
-                Organization Name</label>
-              <argon-input type="text" placeholder="Enter organization name"></argon-input>
+              <label for="investmentIssuer" class="form-control-label">
+                Issuer Name</label>
+              <argon-input type="text" placeholder="Enter issuer"></argon-input>
             </div>
           </div>
 
@@ -81,23 +81,22 @@ onBeforeUnmount(() => {
           <p class="text-uppercase text-sm">Investment Details</p>
           <div class="row">
             <div class="col-md-6">
-              <label for="investmentPricePerShare" class="form-control-label">Investment Price Per
+              <label for="investmentPricePerShare" class="form-control-label">Price Per
                 Share (ETH)</label>
               <argon-input type="number" step="0.01" placeholder="0.00"></argon-input>
             </div>
             <div class="col-md-6">
-              <label for="investmentTargetAmount" class="form-control-label">Investment Target
+              <label for="investmentTargetAmount" class="form-control-label">Target
                 Amount (ETH)</label>
               <argon-input type="number" step="0.01" placeholder="0.00"></argon-input>
             </div>
             <div class="col-md-6">
-              <label for="investmentDeadline" class="form-control-label">Investment Deadline
+              <label for="investmentDeadline" class="form-control-label">Deadline
                 (dd/mm/yy hh:mm)</label>
               <argon-input type="datetime-local" placeholder="Select deadline"></argon-input>
             </div>
             <div class="col-md-6">
-              <label for="investmentValuation" class="form-control-label">Investment
-                Valuation</label>
+              <label for="investmentValuation" class="form-control-label">Valuation</label>
               <argon-input type="text" placeholder="Enter valuation"></argon-input>
             </div>
           </div>
