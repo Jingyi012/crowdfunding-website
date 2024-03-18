@@ -12,7 +12,18 @@ const temp = ref([
         startDate: '21 Jan 2024',
         endDate: '21 Apr 2024',
         fundRaised: 23431,
-        target: 1000000
+        target: 1000000,
+        pricePerShare: 10,
+        targetAmount: 1000,
+        deadline: '2024-02-01T00:00',
+        valuation: 'Valuation 1',
+        minInvestment: 100,
+        maxInvestment: 1000,
+        minSharesOffered: 10,
+        maxSharesOffered: 100,
+        offeringType: 'public',
+        assetType: 'equity',
+        sharesOffered: 'common'
     },
     {
         campaignName: 'BizBoost',
@@ -163,7 +174,18 @@ const temp2 = ref([
         startDate: '21 Jan 2024',
         endDate: '21 Apr 2024',
         status: 'Pending',
-        target: 1000000
+        target: 1000000,
+        pricePerShare: 10,
+        targetAmount: 1000,
+        deadline: '2024-02-01T00:00',
+        valuation: 'Valuation 1',
+        minInvestment: 100,
+        maxInvestment: 1000,
+        minSharesOffered: 10,
+        maxSharesOffered: 100,
+        offeringType: 'public',
+        assetType: 'equity',
+        sharesOffered: 'common'
     },
     {
         campaignName: 'BizBoost',
@@ -294,18 +316,18 @@ onMounted(() => {
     <div class="card m-4">
         <ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-approved-tab" data-bs-toggle="pill" data-bs-target="#pills-approve"
-                    type="button" role="tab" aria-controls="pills-approve" aria-selected="true">Approved</button>
+                <button class="nav-link active" id="pills-approved-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-approve" type="button" role="tab" aria-controls="pills-approve"
+                    aria-selected="true">Approved</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="pills-pending-tab" data-bs-toggle="pill"
-                    data-bs-target="#pills-pending" type="button" role="tab" aria-controls="pills-pending"
-                    aria-selected="false">Pending</button>
+                <button class="nav-link" id="pills-pending-tab" data-bs-toggle="pill" data-bs-target="#pills-pending"
+                    type="button" role="tab" aria-controls="pills-pending" aria-selected="false">Pending</button>
             </li>
         </ul>
         <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade" id="pills-approve" role="tabpanel" aria-labelledby="pills-approved-tab"
-                tabindex="0">
+            <div class="tab-pane fade show active" id="pills-approve" role="tabpanel"
+                aria-labelledby="pills-approved-tab" tabindex="0">
                 <div class="card-header py-0 d-flex justify-content-between align-items-center">
                     <h5>Approved Campaign</h5>
 
@@ -492,10 +514,10 @@ onMounted(() => {
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label for="investmentOrganization"
-                                                                        class="form-label">Campaign Organization
+                                                                        class="form-label">Campaign Issuer
                                                                         Name</label>
                                                                     <input type="text" class="form-control"
-                                                                        placeholder="Enter organization name" />
+                                                                        placeholder="Enter issuer name" :value="item.name" />
                                                                 </div>
                                                             </div>
 
@@ -508,14 +530,14 @@ onMounted(() => {
                                                                         class="form-label">Price Per Share
                                                                         (ETH)</label>
                                                                     <input type="number" step="0.01"
-                                                                        class="form-control" placeholder="0.00" />
+                                                                        class="form-control" placeholder="0.00" :value="item.pricePerShare" />
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label for="investmentTargetAmount"
                                                                         class="form-label">Target Amount
                                                                         (ETH)</label>
                                                                     <input type="number" step="0.01"
-                                                                        class="form-control" placeholder="0.00" />
+                                                                        class="form-control" placeholder="0.00" :value="item.target" />
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label for="investmentDeadline"
@@ -524,13 +546,13 @@ onMounted(() => {
                                                                         hh:mm)</label>
                                                                     <input type="datetime-local" class="form-control"
                                                                         placeholder="Select deadline"
-                                                                        :value="item.endDate" />
+                                                                        :value="item.deadline" />
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label for="investmentValuation"
                                                                         class="form-label">Valuation</label>
                                                                     <input type="text" class="form-control"
-                                                                        placeholder="Enter valuation" />
+                                                                        placeholder="Enter valuation" :value="item.valuation" />
                                                                 </div>
                                                             </div>
 
@@ -544,7 +566,7 @@ onMounted(() => {
                                                                         Investment
                                                                         (ETH)</label>
                                                                     <input type="number" step="0.01"
-                                                                        class="form-control" placeholder="0.00" />
+                                                                        class="form-control" placeholder="0.00" :value="item.minInvestment" />
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label for="maxInvestment"
@@ -552,7 +574,7 @@ onMounted(() => {
                                                                         Investment
                                                                         (ETH)</label>
                                                                     <input type="number" step="0.01"
-                                                                        class="form-control" placeholder="0.00" />
+                                                                        class="form-control" placeholder="0.00" :value="item.maxInvestment" />
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label for="minSharesOffered"
@@ -560,7 +582,7 @@ onMounted(() => {
                                                                         Number of Shares
                                                                         Offered</label>
                                                                     <input type="number" class="form-control"
-                                                                        placeholder="Enter minimum shares" />
+                                                                        placeholder="Enter minimum shares" :value="item.minSharesOffered" />
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label for="maxSharesOffered"
@@ -568,7 +590,7 @@ onMounted(() => {
                                                                         Number of Shares
                                                                         Offered</label>
                                                                     <input type="number" class="form-control"
-                                                                        placeholder="Enter maximum shares" />
+                                                                        placeholder="Enter maximum shares" :value="item.maxSharesOffered" />
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label for="offeringType"
@@ -576,21 +598,39 @@ onMounted(() => {
                                                                         Type</label>
                                                                     <select class="form-control" id="offeringType">
                                                                         <option value="---Select offering type---"
-                                                                            selected disabled>--Select offering type--
+                                                                            disabled>
+                                                                            --Select offering type--
                                                                         </option>
-                                                                        <option value="public">Public</option>
-                                                                        <option value="private">Private</option>
+                                                                        <option value="public"
+                                                                            :selected="item.offeringType === 'public'">
+                                                                            Public
+                                                                        </option>
+                                                                        <option value="private"
+                                                                            :selected="item.offeringType === 'private'">
+                                                                            Private
+                                                                        </option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label for="assetType" class="form-label">Asset
                                                                         Type</label>
                                                                     <select class="form-control" id="assetType">
-                                                                        <option value="---Select asset type---" selected
-                                                                            disabled>--Select asset type--</option>
-                                                                        <option value="equity">Equity</option>
-                                                                        <option value="debt">Debt</option>
-                                                                        <option value="real estate">Real Estate</option>
+                                                                        <option value="---Select asset type---"
+                                                                            disabled>
+                                                                            --Select asset type--
+                                                                        </option>
+                                                                        <option value="equity"
+                                                                            :selected="item.assetType === 'equity'">
+                                                                            Equity
+                                                                        </option>
+                                                                        <option value="debt"
+                                                                            :selected="item.assetType === 'debt'">
+                                                                            Debt
+                                                                        </option>
+                                                                        <option value="real estate"
+                                                                            :selected="item.assetType === 'real estate'">
+                                                                            Real Estate
+                                                                        </option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-md-6">
@@ -600,8 +640,12 @@ onMounted(() => {
                                                                         <option value="---Select shares offered---"
                                                                             selected disabled>--Select shares offered--
                                                                         </option>
-                                                                        <option value="common">Common</option>
-                                                                        <option value="preferred">Preferred</option>
+                                                                        <option value="common"
+                                                                            :selected="item.sharesOffered === 'common'">
+                                                                            Common</option>
+                                                                        <option value="preferred"
+                                                                            :selected="item.sharesOffered === 'preferred'">
+                                                                            Preferred</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -661,8 +705,8 @@ onMounted(() => {
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade show active" id="pills-pending" role="tabpanel"
-                aria-labelledby="pills-pending-tab" tabindex="0">
+            <div class="tab-pane fade" id="pills-pending" role="tabpanel" aria-labelledby="pills-pending-tab"
+                tabindex="0">
                 <div class="card-header py-0 d-flex justify-content-between align-items-center">
                     <h5>Pending Validate Campaign</h5>
 
@@ -784,17 +828,18 @@ onMounted(() => {
                                         <h6 class="item">{{ item.status }}</h6>
                                     </td>
                                     <td>
-                                        <router-link class="btn mb-0" to="/billing"><i
-                                                class="fas fa-info-circle"></i></router-link>
                                         <button type="button" class="btn mb-0 ms-3" data-bs-toggle="modal"
                                             :data-bs-target="'#rowPending' + index">
+                                            <i class="fas fa-info-circle"></i>
+                                        </button>
+                                        <button type="button" class="btn mb-0 ms-3" data-bs-toggle="modal"
+                                            :data-bs-target="'#rowApprove' + index">
                                             <i class="fas fa-check"></i>
                                         </button>
                                         <button type="button" class="btn mb-0 ms-3" data-bs-toggle="modal"
                                             :data-bs-target="'#rowReject' + index">
                                             <i class="fas fa-times"></i>
                                         </button>
-
 
                                         <!-- View Modal -->
                                         <div class="modal fade" :id="'rowPending' + index" tabindex="-1"
@@ -803,8 +848,8 @@ onMounted(() => {
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h1 class="modal-title fs-5" id="ModalLabel"><i
-                                                                class="fas fa-edit"></i>
-                                                            Edit</h1>
+                                                                class="fas fa-info-circle"></i>
+                                                            View</h1>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
                                                     </div>
@@ -812,35 +857,39 @@ onMounted(() => {
                                                         <form>
                                                             <div class="row">
                                                                 <div class="col-md-6">
-                                                                    <label for="investmentName"
-                                                                        class="form-label">Campaign
-                                                                        Name</label>
-                                                                    <input type="text" class="form-control"
-                                                                        placeholder="Enter investment name"
-                                                                        :value="item.campaignName" />
-                                                                </div>
-                                                                <div class="col-md-6">
                                                                     <label for="investmentPoster"
                                                                         class="form-label">Campaign
                                                                         Poster (Image File Format)</label>
                                                                     <br>
-                                                                    <input type="file" class="form-control"
-                                                                        id="investmentPoster" accept="image/*" />
+                                                                    <img src="../assets/img/signin.png" width="260"
+                                                                        style="max-height: 220px" />
                                                                 </div>
-                                                                <div class="col-md-6">
-                                                                    <label for="investmentPurpose" class="form-label">
-                                                                        Purpose</label>
-                                                                    <input type="text" class="form-control"
-                                                                        placeholder="Enter investment description"
-                                                                        :value="item.purpose" />
+                                                                <div class="col">
+                                                                    <div class="col">
+                                                                        <label for="investmentName"
+                                                                            class="form-label">Campaign
+                                                                            Name</label>
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Enter investment name"
+                                                                            :value="item.campaignName" disabled />
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <label for="investmentPurpose"
+                                                                            class="form-label">
+                                                                            Purpose</label>
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Enter investment description"
+                                                                            :value="item.purpose" disabled />
 
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <label for="investmentOrganization"
-                                                                        class="form-label">Campaign Organization
-                                                                        Name</label>
-                                                                    <input type="text" class="form-control"
-                                                                        placeholder="Enter organization name" />
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <label for="investmentOrganization"
+                                                                            class="form-label">Campaign Issuer
+                                                                            Name</label>
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Enter issuer name"
+                                                                            :value="item.name" disabled />
+                                                                    </div>
                                                                 </div>
                                                             </div>
 
@@ -853,14 +902,16 @@ onMounted(() => {
                                                                         class="form-label">Price Per Share
                                                                         (ETH)</label>
                                                                     <input type="number" step="0.01"
-                                                                        class="form-control" placeholder="0.00" />
+                                                                        class="form-control" placeholder="0.00" :value="item.pricePerShare"
+                                                                        disabled />
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label for="investmentTargetAmount"
                                                                         class="form-label">Target Amount
                                                                         (ETH)</label>
                                                                     <input type="number" step="0.01"
-                                                                        class="form-control" placeholder="0.00" />
+                                                                        class="form-control" placeholder="0.00" :value="item.target"
+                                                                        disabled />
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label for="investmentDeadline"
@@ -869,13 +920,14 @@ onMounted(() => {
                                                                         hh:mm)</label>
                                                                     <input type="datetime-local" class="form-control"
                                                                         placeholder="Select deadline"
-                                                                        :value="item.endDate" />
+                                                                        :value="item.deadline" disabled />
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label for="investmentValuation"
                                                                         class="form-label">Valuation</label>
                                                                     <input type="text" class="form-control"
-                                                                        placeholder="Enter valuation" />
+                                                                        placeholder="Enter valuation"
+                                                                        :value="item.valuation" disabled />
                                                                 </div>
                                                             </div>
 
@@ -889,7 +941,8 @@ onMounted(() => {
                                                                         Investment
                                                                         (ETH)</label>
                                                                     <input type="number" step="0.01"
-                                                                        class="form-control" placeholder="0.00" />
+                                                                        class="form-control" placeholder="0.00"
+                                                                        :value="item.minInvestment" disabled />
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label for="maxInvestment"
@@ -897,7 +950,8 @@ onMounted(() => {
                                                                         Investment
                                                                         (ETH)</label>
                                                                     <input type="number" step="0.01"
-                                                                        class="form-control" placeholder="0.00" />
+                                                                        class="form-control" placeholder="0.00"
+                                                                        :value="item.maxInvestment" disabled />
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label for="minSharesOffered"
@@ -905,7 +959,8 @@ onMounted(() => {
                                                                         Number of Shares
                                                                         Offered</label>
                                                                     <input type="number" class="form-control"
-                                                                        placeholder="Enter minimum shares" />
+                                                                        placeholder="Enter minimum shares"
+                                                                        :value="item.minSharesOffered" disabled />
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label for="maxSharesOffered"
@@ -913,40 +968,68 @@ onMounted(() => {
                                                                         Number of Shares
                                                                         Offered</label>
                                                                     <input type="number" class="form-control"
-                                                                        placeholder="Enter maximum shares" />
+                                                                        placeholder="Enter maximum shares"
+                                                                        :value="item.maxSharesOffered" disabled />
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label for="offeringType"
                                                                         class="form-label">Offering
                                                                         Type</label>
-                                                                    <select class="form-control" id="offeringType">
+                                                                    <select class="form-control" id="offeringType"
+                                                                        disabled>
                                                                         <option value="---Select offering type---"
-                                                                            selected disabled>--Select offering type--
+                                                                            disabled>
+                                                                            --Select offering type--
                                                                         </option>
-                                                                        <option value="public">Public</option>
-                                                                        <option value="private">Private</option>
+                                                                        <option value="public"
+                                                                            :selected="item.offeringType === 'public'">
+                                                                            Public
+                                                                        </option>
+                                                                        <option value="private"
+                                                                            :selected="item.offeringType === 'private'">
+                                                                            Private
+                                                                        </option>
                                                                     </select>
+
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label for="assetType" class="form-label">Asset
                                                                         Type</label>
-                                                                    <select class="form-control" id="assetType">
-                                                                        <option value="---Select asset type---" selected
-                                                                            disabled>--Select asset type--</option>
-                                                                        <option value="equity">Equity</option>
-                                                                        <option value="debt">Debt</option>
-                                                                        <option value="real estate">Real Estate</option>
+                                                                    <select class="form-control" id="assetType"
+                                                                        disabled>
+                                                                        <option value="---Select asset type---"
+                                                                            disabled>
+                                                                            --Select asset type--
+                                                                        </option>
+                                                                        <option value="equity"
+                                                                            :selected="item.assetType === 'equity'">
+                                                                            Equity
+                                                                        </option>
+                                                                        <option value="debt"
+                                                                            :selected="item.assetType === 'debt'">
+                                                                            Debt
+                                                                        </option>
+                                                                        <option value="real estate"
+                                                                            :selected="item.assetType === 'real estate'">
+                                                                            Real Estate
+                                                                        </option>
                                                                     </select>
+
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label for="sharesOffered" class="form-label">Shares
                                                                         Offered</label>
-                                                                    <select class="form-control" id="sharesOffered">
+                                                                    <select class="form-control" id="sharesOffered"
+                                                                        disabled>
                                                                         <option value="---Select shares offered---"
                                                                             selected disabled>--Select shares offered--
                                                                         </option>
-                                                                        <option value="common">Common</option>
-                                                                        <option value="preferred">Preferred</option>
+                                                                        <option value="common"
+                                                                            :selected="item.sharesOffered === 'common'">
+                                                                            Common</option>
+                                                                        <option value="preferred"
+                                                                            :selected="item.sharesOffered === 'preferred'">
+                                                                            Preferred</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -957,26 +1040,47 @@ onMounted(() => {
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary"
                                                             data-bs-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary">Save
-                                                            changes</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <!-- Delete Modal -->
+                                        <!-- Approve Modal -->
+                                        <div class="modal fade" :id="'rowApprove' + index" tabindex="-1"
+                                            aria-labelledby="ModalLabelD" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="ModalLabelD"><i
+                                                                class="fas fa-check"></i> Approve</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Confirm to approve the creation of "{{ item.campaignName }}" ?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Confirm</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Reject Modal -->
                                         <div class="modal fade" :id="'rowReject' + index" tabindex="-1"
                                             aria-labelledby="ModalLabelD" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h1 class="modal-title fs-5" id="ModalLabelD"><i
-                                                                class="fas fa-x"></i> Reject</h1>
+                                                                class="fas fa-times"></i> Reject</h1>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        Confirm to reject the creation of "{{ item.name }}" ?
+                                                        Confirm to reject the creation of "{{ item.campaignName }}" ?
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary"
