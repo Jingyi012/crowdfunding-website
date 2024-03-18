@@ -57,7 +57,7 @@ onBeforeUnmount(() => {
                 </p>
               </div>
             </div>
-            <div class="mx-0 col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-8 mt-7 position-absolute end-0 top-6 ">
+            <div class="mx-0 col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-8 mt-7 position-absolute end-0 top-6 px-5">
               <div class="card card-plain">
                 <div class="pb-0 card-header text-start">
                   <h4 class="font-weight-bolder">Sign Up</h4>

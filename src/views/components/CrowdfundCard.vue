@@ -13,15 +13,15 @@ defineProps({
         default: "Undefined",
     },
     goal: {
-        type: Int16Array,
+        type: String,
         default: "Undefined",
     },
     raised: {
-        type: Int16Array,
+        type: String,
         default: "Undefined",
     },
     investor: {
-        type: Int16Array,
+        type: String,
         default: "Undefined",
     },
     status: {
