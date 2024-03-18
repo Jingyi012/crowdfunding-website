@@ -1,17 +1,88 @@
 <script setup>
 import { ref } from 'vue';
 const temp = ref([
-    { name: 'John Doe', email: 'john@example.com', walletAddress: '0x876E869E4A62627C3d8F49163d8C90d47eE08fb5' },
-  { name: 'Jane Smith', email: 'jane@example.com', walletAddress: '0x3dEFd9277C1724DcA8E94385D2173fEbaA6524e7' },
-  { name: 'Michael Johnson', email: 'michael@example.com', walletAddress: '0xFfAc5D3e5276fFAa41Ab5dE73A8A79A81eBe7F8a' },
-  { name: 'Emily Brown', email: 'emily@example.com', walletAddress: '0x0a56C3881C9dB046A5a3A31aBe84Caf06F98d937' },
-  { name: 'David Wilson', email: 'david@example.com', walletAddress: '0x4E6c3D6e256B8eDE5B28d6d8a1a242b0455E2409' },
-  { name: 'Emma Taylor', email: 'emma@example.com', walletAddress: '0xc5e3FEd4166b8C422B90F788d02a6f86C0Af3Ab8' },
-  { name: 'Daniel Martinez', email: 'daniel@example.com', walletAddress: '0xe3F8e0f4Ee322420D31932a9D40e51E14D9Df09d' },
-  { name: 'Olivia Garcia', email: 'olivia@example.com', walletAddress: '0x6bD75833a04eA2c12745d2f7a4D9AD054812cFA1' },
-  { name: 'James Rodriguez', email: 'james@example.com', walletAddress: '0xd6bF91BBaC18F8ECbaF55C4d6663646aF9F02d94' },
-  { name: 'Sophia Hernandez', email: 'sophia@example.com', walletAddress: '0x5C2186Fb225a15e06B89aB85C61A0a91f0FF8Cf6' }
-]);
+    {
+        "username": "john_doe",
+        "firstName": "John",
+        "lastName": "Doe",
+        "phone": "+1234567890",
+        "email": "john.doe@example.com",
+        "walletAddress": "0xAbCdEf1234567890"
+    },
+    {
+        "username": "jane_smith",
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "phone": "+1987654321",
+        "email": "jane.smith@example.com",
+        "walletAddress": "0xFeDcBa0987654321"
+    },
+    {
+        "username": "alice_johnson",
+        "firstName": "Alice",
+        "lastName": "Johnson",
+        "phone": "+1122334455",
+        "email": "alice.johnson@example.com",
+        "walletAddress": "0x1234567890AbCdEf"
+    },
+    {
+        "username": "mark_turner",
+        "firstName": "Mark",
+        "lastName": "Turner",
+        "phone": "+1555666777",
+        "email": "mark.turner@example.com",
+        "walletAddress": "0x4567890AbCdEf123"
+    },
+    {
+        "username": "sarah_brown",
+        "firstName": "Sarah",
+        "lastName": "Brown",
+        "phone": "+1777888999",
+        "email": "sarah.brown@example.com",
+        "walletAddress": "0x67890AbCdEf12345"
+    },
+    {
+        "username": "chris_jackson",
+        "firstName": "Chris",
+        "lastName": "Jackson",
+        "phone": "+1888999000",
+        "email": "chris.jackson@example.com",
+        "walletAddress": "0xAbCdEf1234567890"
+    },
+    {
+        "username": "emily_taylor",
+        "firstName": "Emily",
+        "lastName": "Taylor",
+        "phone": "+1444555666",
+        "email": "emily.taylor@example.com",
+        "walletAddress": "0xFeDcBa0987654321"
+    },
+    {
+        "username": "david_clark",
+        "firstName": "David",
+        "lastName": "Clark",
+        "phone": "+1222333444",
+        "email": "david.clark@example.com",
+        "walletAddress": "0x1234567890AbCdEf"
+    },
+    {
+        "username": "jennifer_white",
+        "firstName": "Jennifer",
+        "lastName": "White",
+        "phone": "+1333444555",
+        "email": "jennifer.white@example.com",
+        "walletAddress": "0xAbCdEf1234567890"
+    },
+    {
+        "username": "ryan_miller",
+        "firstName": "Ryan",
+        "lastName": "Miller",
+        "phone": "+1666777888",
+        "email": "ryan.miller@example.com",
+        "walletAddress": "0xFeDcBa0987654321"
+    }
+]
+);
 
 const sortBy = ref(null);
 const sortOrder = ref('asc');
@@ -53,13 +124,25 @@ function sortData(criteria) {
                     <thead>
                         <tr>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                <div class="d-flex align-items-center" @click="sortData('name')" style="cursor: pointer">
-                                    User Name 
+                                <div class="d-flex align-items-center" @click="sortData('username')"
+                                    style="cursor: pointer">
+                                    User Name
                                     <div class="d-flex flex-column ms-3">
-                                        <i class="fas fa-caret-up text-sm lh-1" :class="{'text-dark': sortBy === 'name' && sortOrder === 'asc'}"></i>
-                                        <i class="fas fa-caret-down text-sm lh-1" :class="{'text-dark': sortBy === 'name' && sortOrder === 'desc'}"></i>
+                                        <i class="fas fa-caret-up text-sm lh-1"
+                                            :class="{ 'text-dark': sortBy === 'username' && sortOrder === 'asc' }"></i>
+                                        <i class="fas fa-caret-down text-sm lh-1"
+                                            :class="{ 'text-dark': sortBy === 'username' && sortOrder === 'desc' }"></i>
                                     </div>
                                 </div>
+                            </th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                First Name
+                            </th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                Last Name
+                            </th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                Phone Number
                             </th>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                 Email
@@ -84,7 +167,16 @@ function sortData(criteria) {
                     <tbody>
                         <tr v-for="(item, index) in temp" :key="index">
                             <td>
-                                <h6 class="item ps-3">{{ item.name }}</h6>
+                                <h6 class="item ps-3">{{ item.username }}</h6>
+                            </td>
+                            <td>
+                                <h6 class="item">{{ item.firstName }}</h6>
+                            </td>
+                            <td>
+                                <h6 class="item">{{ item.lastName }}</h6>
+                            </td>
+                            <td>
+                                <h6 class="item">{{ item.phone }}</h6>
                             </td>
                             <td>
                                 <h6 class="item">{{ item.email }}</h6>
@@ -92,17 +184,9 @@ function sortData(criteria) {
                             <td>
                                 <h6 class="item">{{ item.walletAddress }}</h6>
                             </td>
-                            <!-- <td>
-                                <h6 class="item">{{ item.fundRaised }}</h6>
-                            </td>
                             <td>
-                                <h6 class="item">{{ item.target }}</h6>
-                            </td>
-                            <td>
-                                <h6 class="item">Ongoing</h6>
-                            </td> -->
-                            <td>
-                                <button type="button" class="btn mb-0" data-bs-toggle="modal" :data-bs-target="'#row' + index"><i class="fas fa-edit"></i></button>
+                                <button type="button" class="btn mb-0" data-bs-toggle="modal"
+                                    :data-bs-target="'#row' + index"><i class="fas fa-edit"></i></button>
 
                                 <!-- Edit Modal -->
                                 <div class="modal fade" :id="'row' + index" tabindex="-1" aria-labelledby="ModalLabel"
@@ -117,16 +201,35 @@ function sortData(criteria) {
                                             <div class="modal-body">
                                                 <form>
                                                     <div class="mb-3">
-                                                        <label for="name" class="form-label">Name:</label>
-                                                        <input type="text" class="form-control" id="name" placeholder="Enter name" :value="item.name">
+                                                        <label for="username" class="form-label">Username:</label>
+                                                        <input type="text" class="form-control" id="username"
+                                                            placeholder="Enter name" :value="item.username">
                                                     </div>
                                                     <div class="mb-3">
-                                                        <label for="startDate" class="form-label">Email:</label>
-                                                        <input type="email" class="form-control" id="email" :value="item.email">
+                                                        <label for="firstName" class="form-label">First Name:</label>
+                                                        <input type="text" class="form-control" id="firstName"
+                                                            placeholder="Enter name" :value="item.firstName">
                                                     </div>
                                                     <div class="mb-3">
-                                                        <label for="endDate" class="form-label">Wallet Address:</label>
-                                                        <input type="text" class="form-control" id="walletAddress" :value="item.walletAddress">
+                                                        <label for="lastName" class="form-label">Last Name:</label>
+                                                        <input type="text" class="form-control" id="lastName"
+                                                            placeholder="Enter name" :value="item.lastName">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="phone" class="form-label">Last Name:</label>
+                                                        <input type="text" class="form-control" id="phone"
+                                                            placeholder="Enter name" :value="item.phone">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="email" class="form-label">Email:</label>
+                                                        <input type="email" class="form-control" id="email"
+                                                            :value="item.email">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="walletAddress" class="form-label">Wallet
+                                                            Address:</label>
+                                                        <input type="text" class="form-control" id="walletAddress"
+                                                            :value="item.walletAddress">
                                                     </div>
                                                 </form>
                                             </div>
