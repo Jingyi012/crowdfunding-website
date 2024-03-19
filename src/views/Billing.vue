@@ -74,9 +74,9 @@ const toggledonation = () => {
             <div class="card">
               <div class="card-header pb-0 p-3">
                 <div class="row">
-                  <div class="col-6 d-flex align-items-center">
-                    <h4>Save Water Campaign</h4>
-
+                  <div class="col-6 flex-column align-items-center">
+                    <h4>Kasturi Capital Holding</h4>
+                    <p>Redefining Food, Beverage and Hospitality</p>
                   </div>
 
 
@@ -137,26 +137,26 @@ const toggledonation = () => {
               <p class="text-sm mb-0">Investment Deadline</p>
               <p class="text-sm" style="color:black;font-weight:bold">21 March 2024</p>
               <p class="text-sm mb-0">Investment Price Per Share</p>
-              <p class="text-sm" style="color:black;font-weight:bold">500ETH</p>
+              <p class="text-sm" style="color:black;font-weight:bold">50ETH</p>
               <p class="text-sm mb-0">Investment Target Amount</p>
               <p class="text-sm" style="color:black;font-weight:bold">10000ETH</p>
               <p class="text-sm mb-0">Investment Valuation</p>
               <p class="text-sm" style="color:black;font-weight:bold">10000ETH</p>
               <p class="text-sm mb-0">Minimum Investment</p>
-              <p class="text-sm" style="color:black;font-weight:bold">10000ETH</p>
+              <p class="text-sm" style="color:black;font-weight:bold">500ETH</p>
               <p class="text-sm mb-0">Maximum Investment</p>
-              <p class="text-sm" style="color:black;font-weight:bold">10000ETH</p>
+              <p class="text-sm" style="color:black;font-weight:bold">99995</p>
               <p class="text-sm mb-0">Minimum Number of Shares Offered</p>
-              <p class="text-sm" style="color:black;font-weight:bold">10000ETH</p>
+              <p class="text-sm" style="color:black;font-weight:bold">2555</p>
               <p class="text-sm mb-0">Maximum Number of Shares Offered</p>
-              <p class="text-sm" style="color:black;font-weight:bold">10000ETH</p>
+              <p class="text-sm" style="color:black;font-weight:bold">60000</p>
 
               <p class="text-sm mb-0">Offering Type</p>
               <p class="text-sm" style="color:black;font-weight:bold">Public</p>
               <p class="text-sm mb-0">Asset Type</p>
               <p class="text-sm" style="color:black;font-weight:bold">Equity</p>
               <p class="text-sm mb-0">Shares Offered</p>
-              <p class="text-sm" style="color:black;font-weight:bold">Commom</p>
+              <p class="text-sm" style="color:black;font-weight:bold">Common</p>
               <p class="text-sm mb-0">Campaign Organiser</p>
               <p class="text-sm mb-0" style="color:black;font-weight:bold">Bruce Lee</p>
             </div>
@@ -169,18 +169,18 @@ const toggledonation = () => {
 
 
   </div>
-  <div v-if="showdonation" class="donation-pop-out">
-    <div @click="toggledonation"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
+  <div v-if="showdonation" class="donation-pop-out border rounded-lg shadow ">
+    <div @click="toggledonation"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red"
         class="bi bi-x-circle closebutton" viewBox="0 0 16 16">
         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
         <path
           d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
       </svg></div>
-    <h4 style="margin-left:10px">Donation amount</h4>
+    <h4 style="margin-left:10px">Investment amount</h4>
 
-    <button id="button" :class="{ 'selected': selectedAmount === 100 }" @click="selectAmount(100)">100 ETH</button>
-    <button id="button" :class="{ 'selected': selectedAmount === 200 }" @click="selectAmount(200)">200 ETH</button>
-    <button id="button" :class="{ 'selected': selectedAmount === 300 }" @click="selectAmount(300)">300 ETH</button>
+    <button id="button" :class="{ 'selected': selectedAmount === 100 }" @click="selectAmount(500)">500 ETH</button>
+    <button id="button" :class="{ 'selected': selectedAmount === 200 }" @click="selectAmount(5000)">5000 ETH</button>
+    <button id="button" :class="{ 'selected': selectedAmount === 300 }" @click="selectAmount(99995)">9000 ETH</button>
 
     <input class="donationamount" v-model="selectedAmount" @input="updateSelectedAmount" placeholder="Amount" />ETH
     <div class="d-flex align-items-center mt-3" style="margin-left:10px">
@@ -198,7 +198,7 @@ const toggledonation = () => {
     <div class="d-flex align-items-center justify-content-center mt-4">
 
 
-      <button id="paynowbutton"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      <button id="paynowbutton" @click="toggledonation"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
           class="bi bi-wallet-fill" style="margin-right:5px;" viewBox="0 0 16 16">
           <path
             d="M1.5 2A1.5 1.5 0 0 0 0 3.5v2h6a.5.5 0 0 1 .5.5c0 .253.08.644.306.958.207.288.557.542 1.194.542s.987-.254 1.194-.542C9.42 6.644 9.5 6.253 9.5 6a.5.5 0 0 1 .5-.5h6v-2A1.5 1.5 0 0 0 14.5 2z" />
@@ -231,6 +231,7 @@ const toggledonation = () => {
 }
 
 .donationamount {
+  width:50%;
   margin: 20px 3px 0 10px;
   padding: 10px;
   font-weight: 500;
@@ -258,8 +259,7 @@ const toggledonation = () => {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #f2f2f2;
-  height: 400px;
+  background-color: white;
   width: 30%;
   z-index: 99999;
   padding: 2rem;
