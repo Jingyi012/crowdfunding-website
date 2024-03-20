@@ -33,7 +33,7 @@ const signOut = () => {
 
 // Method to clear session data
 const clearSessionData = () => {
-  localStorage.setItem('role', "");
+  localStorage.setItem('role', 'null');
 };
 </script>
 <template>

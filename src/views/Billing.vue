@@ -13,28 +13,48 @@ const body = document.getElementsByTagName("body")[0];
 
 const store = useStore();
 const showdonation = ref(false);
+const role = ref(localStorage.getItem('role'));
+console.log(role.value);
 onMounted(() => {
   store.state.isAbsolute = true;
   setNavPills();
   setTooltip();
 });
-onBeforeMount(() => {
-  store.state.layout = "profile-overview";
-  store.state.imageLayout = "profile-overview";
-  store.state.showNavbar = true;
-  store.state.showFooter = true;
-  store.state.hideConfigButton = true;
-  body.classList.add("profile-overview");
-});
-onBeforeUnmount(() => {
-  store.state.layout = "default";
-  store.state.isAbsolute = false;
-  store.state.imageLayout = "default";
-  store.state.showNavbar = true;
-  store.state.showFooter = true;
-  store.state.hideConfigButton = false;
-  body.classList.remove("profile-overview");
-});
+if (role.value !== 'null') {
+  onBeforeMount(() => {
+    store.state.layout = "profile-overview";
+    store.state.imageLayout = "profile-overview";
+    store.state.showNavbar = true;
+    store.state.showFooter = true;
+    store.state.hideConfigButton = true;
+    body.classList.add("profile-overview");
+  });
+  onBeforeUnmount(() => {
+    store.state.layout = "default";
+    store.state.isAbsolute = false;
+    store.state.imageLayout = "default";
+    store.state.showNavbar = true;
+    store.state.showFooter = true;
+    store.state.hideConfigButton = false;
+    body.classList.remove("profile-overview");
+  });
+}
+else {
+  onBeforeMount(() => {
+    store.state.hideConfigButton = true;
+    store.state.showNavbar = false;
+    store.state.showSidenav = false;
+    store.state.showFooter = false;
+    body.classList.remove("bg-gray-100");
+  });
+  onBeforeUnmount(() => {
+    store.state.hideConfigButton = false;
+    store.state.showNavbar = true;
+    store.state.showSidenav = true;
+    store.state.showFooter = true;
+    body.classList.add("bg-gray-100");
+  });
+}
 
 
 
@@ -55,8 +75,16 @@ const toggledonation = () => {
 </script>
 
 <template>
-  <div class="container-fluid">
 
+  <div class="container top-0 position-sticky z-index-sticky" v-if="role === 'null'">
+    <div class="row">
+      <div class="col-12">
+        <navbar isBlur="blur  border-radius-lg my-3 py-2 start-0 end-0 mx-4 shadow" v-bind:darkMode="true"
+          isBtn="bg-gradient-success" />
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
     <div class="page-header min-height-400" style="
         background-image: url(https://www.unodc.org/res/endht/get-involved_html/join-theme.png);
         margin-right: -24px;
@@ -198,8 +226,8 @@ const toggledonation = () => {
     <div class="d-flex align-items-center justify-content-center mt-4">
 
 
-      <button id="paynowbutton" @click="toggledonation"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
-          class="bi bi-wallet-fill" style="margin-right:5px;" viewBox="0 0 16 16">
+      <button id="paynowbutton" @click="toggledonation"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+          fill="currentColor" class="bi bi-wallet-fill" style="margin-right:5px;" viewBox="0 0 16 16">
           <path
             d="M1.5 2A1.5 1.5 0 0 0 0 3.5v2h6a.5.5 0 0 1 .5.5c0 .253.08.644.306.958.207.288.557.542 1.194.542s.987-.254 1.194-.542C9.42 6.644 9.5 6.253 9.5 6a.5.5 0 0 1 .5-.5h6v-2A1.5 1.5 0 0 0 14.5 2z" />
           <path
@@ -231,7 +259,7 @@ const toggledonation = () => {
 }
 
 .donationamount {
-  width:50%;
+  width: 50%;
   margin: 20px 3px 0 10px;
   padding: 10px;
   font-weight: 500;
