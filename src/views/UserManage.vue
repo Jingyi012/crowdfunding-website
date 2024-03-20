@@ -1,5 +1,6 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { useRouter } from 'vue-router';
 const temp = ref([
     {
         "username": "john_doe",
@@ -83,7 +84,9 @@ const temp = ref([
     }
 ]
 );
-
+const currentPage = ref(1);
+const maxPageSize = ref(null);
+const listData = ref([]);
 const sortBy = ref(null);
 const sortOrder = ref('asc');
 
@@ -95,13 +98,70 @@ function sortData(criteria) {
         sortOrder.value = 'asc';
     }
 
-    temp.value.sort((a, b) => {
+    listData.value.sort((a, b) => {
         const factor = sortOrder.value === 'asc' ? 1 : -1;
         if (a[criteria] < b[criteria]) return -1 * factor;
         if (a[criteria] > b[criteria]) return 1 * factor;
         return 0;
     });
 }
+
+
+const router = useRouter();
+const beforeEachGuard = (to, from, next) => {
+    closeModal();
+    next();
+};
+
+router.beforeEach(beforeEachGuard);
+
+onBeforeUnmount(() => {
+    router.beforeEach((to, from, next) => {
+
+        if (beforeEachGuard === router.beforeEach) {
+            router.beforeEach(null);
+        }
+        next();
+    });
+});
+
+function closeModal() {
+    document.body.classList.remove('modal-open');
+    const modalBackdrop = document.querySelector('.modal-backdrop');
+    if (modalBackdrop) {
+        modalBackdrop.parentNode.removeChild(modalBackdrop);
+    }
+}
+
+const goToPreviousPage = () => {
+    if (currentPage.value > 1) {
+        currentPage.value--;
+    }
+    sliceTempArray();
+}
+
+const goToNextPage = () => {
+    if (currentPage.value < maxPageSize.value) {
+        currentPage.value++;
+    }
+    sliceTempArray();
+}
+
+function setMaxPageSize() {
+    maxPageSize.value = Math.ceil(temp.value.length / 6);
+}
+
+function sliceTempArray() {
+    const startIndex = (currentPage.value - 1) * 6;
+    const endIndex = startIndex + 6;
+    listData.value = temp.value.slice(startIndex, endIndex);
+}
+
+onMounted(() => {
+    setMaxPageSize();
+    sliceTempArray();
+})
+
 </script>
 
 <template>
@@ -165,7 +225,7 @@ function sortData(criteria) {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(item, index) in temp" :key="index">
+                        <tr v-for="(item, index) in listData" :key="index">
                             <td>
                                 <h6 class="item ps-3">{{ item.username }}</h6>
                             </td>
@@ -242,6 +302,19 @@ function sortData(criteria) {
                                     </div>
                                 </div>
 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="7">
+                                <div class="d-flex justify-content-end me-4">
+                                    <button class="btn my-0 me-2" @click="goToPreviousPage()"> <i
+                                            class="fas fa-chevron-left"></i> </button>
+                                    <span
+                                        class="pageNum border rounded d-flex align-items-center justify-content-center"
+                                        style="min-width: 30px">{{ currentPage }}</span>
+                                    <button class="btn my-0 ms-2" @click="goToNextPage()"> <i
+                                            class="fas fa-chevron-right"></i> </button>
+                                </div>
                             </td>
                         </tr>
                     </tbody>
