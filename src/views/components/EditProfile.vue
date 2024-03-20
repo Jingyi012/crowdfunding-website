@@ -13,8 +13,8 @@ const toggleEditProfile = () => {
     <div class="row">
 
         <div v-if="editProfile" class="row">
-            <div class="col-md-4 d-flex justify-content-center align-items-center"
-                style="border-radius: 1rem 0 0 1rem;background-color:white;">
+            <div class="col-md-4 col11 d-flex justify-content-center align-items-center"
+                style="background-color:white;">
                 <div class="container d-flex justify-content-center">
                     <div class=" image d-flex flex-column justify-content-center align-items-center">
                         <div class="justify-content-center align-items-center d-flex mb-4"
@@ -34,7 +34,7 @@ const toggleEditProfile = () => {
                     </div>
                 </div>
             </div>
-            <div class="card col-md-8" style="border-radius:0 1rem 1rem 0;">
+            <div class="card col-md-8 col22">
                 <div class="p-4 form-style-5" style="border-radius: 1rem;">
                     <h5 class="mb-4"><span class="number">1</span> User Information</h5>
                     <div class="row">
@@ -77,8 +77,8 @@ const toggleEditProfile = () => {
 
         </div>
         <div v-else class="row">
-            <div class="col-md-4 d-flex justify-content-center align-items-center"
-                style="border-radius: 1rem 0 0 1rem;background-color:white;">
+            <div class="col-md-4 d-flex justify-content-center align-items-center col11"
+                style="background-color:white;">
                 <div class="container d-flex justify-content-center">
                     <div class=" image d-flex flex-column justify-content-center align-items-center">
                         <div class="justify-content-center align-items-center d-flex mb-4"
@@ -94,7 +94,7 @@ const toggleEditProfile = () => {
                     </div>
                 </div>
             </div>
-            <div class="card col-md-8 " style="border-radius:0 1rem 1rem 0;">
+            <div class="card col-md-8 col22">
                 <div class="card-header pb-0">
                     <div class="d-flex align-items-center">
                     </div>
@@ -311,5 +311,23 @@ col-md-8 {
 .form-style-5 input[type="submit"]:hover,
 .form-style-5 input[type="button"]:hover {
     background: #109177;
+}
+
+.col11{
+    border-radius: 1rem 0 0 1rem !important;
+}
+
+.col22{
+    border-radius:0 1rem 1rem 0 !important;
+}
+
+@media screen and (max-width: 765px) {
+    .col11 {
+        border-radius: 1rem 1rem 0rem 0rem !important;
+    }
+    
+    .col22 {
+        border-radius: 0rem 0rem 1rem 1rem !important;
+    }
 }
 </style>
