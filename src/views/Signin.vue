@@ -6,9 +6,12 @@ import AppFooter from "@/examples/PageLayout/Footer.vue";
 import ArgonInput from "@/components/ArgonInput.vue";
 import ArgonSwitch from "@/components/ArgonSwitch.vue";
 import ArgonButton from "@/components/ArgonButton.vue";
+import { useRouter } from "vue-router";
 const body = document.getElementsByTagName("body")[0];
 
+const router = useRouter();
 const store = useStore();
+
 onBeforeMount(() => {
   store.state.hideConfigButton = true;
   store.state.showNavbar = false;
@@ -23,6 +26,33 @@ onBeforeUnmount(() => {
   store.state.showFooter = true;
   body.classList.add("bg-gray-100");
 });
+
+// Assuming you have a method to handle sign-in and get the selected role
+function signIn() {
+  const role = getSelectedRole(); // Get the selected role, e.g., "issuer" or "investor"
+  navigateToRolePage(role); // Navigate to the appropriate page based on the role
+}
+
+// Method to navigate to the appropriate page based on the selected role
+function navigateToRolePage(role) {
+  if (role === "Issuer") {
+    router.push("/billing");
+  } else if (role === "Investor") {
+    router.push("/profile");
+  } else {
+    router.push("/usermanage");
+  }
+}
+
+// Example sign-in logic, replace this with your actual sign-in logic
+function getSelectedRole() {
+  // Assuming you have a form or some UI element to select the role
+  // In this example, let's say you have a dropdown with id "sharesOffered"
+  const selectedRole = document.getElementById("sharesOffered").value;
+
+  // Return the selected role
+  return selectedRole;
+}
 
 </script>
 <template>
@@ -53,10 +83,18 @@ onBeforeUnmount(() => {
                     <div class="mb-3">
                       <argon-input id="password" type="password" placeholder="Password" name="password" size="lg" />
                     </div>
+                    <div class="mb-3">
+                      <select class="form-control" id="sharesOffered">
+                        <option value="---Select role---" selected disabled>--Select role--</option>
+                        <option value="Issuer">Issuer</option>
+                        <option value="Investor">Investor</option>
+                      </select>
+                    </div>
                     <argon-switch id="rememberMe" name="remember-me">Remember me</argon-switch>
 
                     <div class="text-center">
-                      <argon-button class="mt-4" variant="gradient" color="success" fullWidth size="lg">Sign
+                      <argon-button @click="signIn" class="mt-4" variant="gradient" color="success" fullWidth
+                        size="lg">Sign
                         in</argon-button>
                     </div>
                   </form>
@@ -64,7 +102,7 @@ onBeforeUnmount(() => {
                 <div class="px-1 pt-0 text-center card-footer px-lg-2">
                   <p class="mx-auto mb-4 text-sm">
                     Don't have an account?
-                    <a href="javascript:;" class="text-success text-gradient font-weight-bold">Sign up</a>
+                    <a href="/signup" class="text-success text-gradient font-weight-bold">Sign up</a>
                   </p>
                 </div>
               </div>

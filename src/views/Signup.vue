@@ -57,7 +57,8 @@ onBeforeUnmount(() => {
                 </p>
               </div>
             </div>
-            <div class="mx-0 col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-8 mt-7 position-absolute end-0 top-6 px-5">
+            <div
+              class="mx-0 col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-8 mt-7 position-absolute end-0 top-6 px-5">
               <div class="card card-plain">
                 <div class="pb-0 card-header text-start">
                   <h4 class="font-weight-bolder">Sign Up</h4>
@@ -130,6 +131,13 @@ onBeforeUnmount(() => {
                     <div class="mb-3">
                       <argon-input id="password" type="password" placeholder="Password" name="password" size="lg" />
                     </div>
+                    <div class="mb-3">
+                      <select class="form-control" id="sharesOffered">
+                        <option value="---Select role---" selected disabled>--Select role--</option>
+                        <option value="issuer">Issuer</option>
+                        <option value="Investor">Investor</option>
+                      </select>
+                    </div>
                     <argon-checkbox checked>
                       <label class="form-check-label" for="flexCheckDefault">
                         I agree the
@@ -145,7 +153,7 @@ onBeforeUnmount(() => {
                 <div class="px-1 pt-0 text-center card-footer px-lg-2">
                   <p class="mx-auto mb-4 text-sm">
                     Already have an account?
-                    <a href="javascript:;" class="text-dark font-weight-bolder">Sign in</a>
+                    <a href="/signin" class="text-dark font-weight-bolder">Sign in</a>
                   </p>
                 </div>
               </div>

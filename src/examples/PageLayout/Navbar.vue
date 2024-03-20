@@ -40,6 +40,13 @@ defineProps({
             </router-link>
           </li>
           <li class="nav-item">
+            <router-link class="nav-link me-2" to="/info">
+              <i class="fa fa-info-circle opacity-6 me-1" aria-hidden="true"
+                :class="isBlur ? 'text-dark' : 'text-white'"></i>
+              Information
+            </router-link>
+          </li>
+          <li class="nav-item">
             <router-link class="nav-link me-2" to="/transactionlist">
               <i class="fa fa-exchange opacity-6 me-1" aria-hidden="true"
                 :class="isBlur ? 'text-dark' : 'text-white'"></i>
