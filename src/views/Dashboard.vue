@@ -7,6 +7,7 @@ import Navbar from "@/examples/PageLayout/Navbar.vue";
 import AppFooter from "@/examples/PageLayout/Footer.vue";
 import { onBeforeUnmount, onBeforeMount } from "vue";
 import { useStore } from "vuex";
+
 const body = document.getElementsByTagName("body")[0];
 
 const store = useStore();
@@ -45,8 +46,7 @@ const transactionList = [{
   receiver: "Gameflip",
   timestamp: "57",
   amount: 123
-},];
-
+},];// Log VueSession object
 </script>
 <template>
 

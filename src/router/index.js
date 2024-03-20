@@ -13,6 +13,7 @@ import Tables from "../views/Tables.vue";
 import TransactionList from "../views/TransactionList.vue";
 import CrowdfundList from "../views/CrowdfundList.vue";
 import Transaction from "../views/transaction.vue";
+import Certificate from "../views/Certificate.vue";
 import GeneralList from "../views/GeneralList.vue";
 import UserManage from "../views/UserManage.vue";
 import VirtualReality from "../views/VirtualReality.vue";
@@ -111,6 +112,16 @@ const routes = [
     path: "/generallist",
     name: "generallist",
     component: GeneralList,
+  },
+  {
+    path: "/certificate",
+    name: "certificate",
+    component: Certificate,
+  },
+  {
+    path: "/certificate",
+    name: "certificate",
+    component: Certificate,
   },
 ];
 

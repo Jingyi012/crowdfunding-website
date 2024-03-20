@@ -8,10 +8,10 @@ const showMenu = ref(false);
 const store = useStore();
 const isRTL = computed(() => store.state.isRTL);
 
-const route = useRoute();
+const router = useRoute();
 
 const currentRouteName = computed(() => {
-  return route.name;
+  return router.name;
 });
 // const currentDirectory = computed(() => {
 //   let dir = route.path.split("/")[1];
@@ -24,6 +24,16 @@ const closeMenu = () => {
   setTimeout(() => {
     showMenu.value = false;
   }, 100);
+};
+
+const signOut = () => {
+  // Clear session data
+  clearSessionData();
+};
+
+// Method to clear session data
+const clearSessionData = () => {
+  localStorage.setItem('role', "");
 };
 </script>
 <template>
@@ -97,7 +107,7 @@ const closeMenu = () => {
             </a>
           </li>
           <li class="nav-item d-flex align-items-center pe-3">
-            <router-link :to="{ name: 'Signin' }" class="px-0 nav-link font-weight-bold text-white">
+            <router-link :to="{ name: 'Signin' }" class="px-0 nav-link font-weight-bold text-white" @click="signOut">
               <span class="d-sm-inline d-none">Sign Out</span>
             </router-link>
           </li>

@@ -11,25 +11,30 @@ const toggleEditProfile = () => {
 <template>
 
     <div class="row">
-        <div class="col-md-4 d-flex justify-content-center align-items-center"
-            style="border-radius: 1rem 0 0 1rem;background-color:white;">
-            <div class="container d-flex justify-content-center">
-                <div class=" image d-flex flex-column justify-content-center align-items-center">
-                    <div class="justify-content-center align-items-center d-flex mb-4"
-                        style="background-color:white;border-radius:50%;height:150px;width:150px; ">
-                        <img src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg"
-                            style="background-color:white;border-radius:50%;height:150px;width:150px; " />
-                    </div>
-                    <div class=" d-flex flex-row justify-content-center align-items-center gap-2  mt-4">
-                        <div class=" d-flex"> <!-- HTML !-->
-                            <button class="button-31" role="button" @click="toggleEditProfile">Edit Profile</button>
+
+        <div v-if="editProfile" class="row">
+            <div class="col-md-4 d-flex justify-content-center align-items-center"
+                style="border-radius: 1rem 0 0 1rem;background-color:white;">
+                <div class="container d-flex justify-content-center">
+                    <div class=" image d-flex flex-column justify-content-center align-items-center">
+                        <div class="justify-content-center align-items-center d-flex mb-4"
+                            style="background-color:white;border-radius:50%;height:150px;width:150px; ">
+                            <img src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg"
+                                style="background-color:white;border-radius:50%;height:150px;width:150px; " />
+                        </div>
+                        <div class=" d-flex flex-row justify-content-center align-items-center gap-2  mt-4">
+                            <div class=" d-flex flex-column"> <!-- HTML !-->
+                                <div class="button-31" style="margin-bottom: 20px;">
+                                    <span>Upload Photo</span>
+                                    <input type="file" class="upload-file-button" onchange="handleFileUpload(this)">
+                                </div>
+                                <button class="button-31" role="button" @click="toggleEditProfile">Save Profile</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div v-if="editProfile" class="col-md-8">
-            <div class="card" style="border-radius:0 1rem 1rem 0;">
+            <div class="card col-md-8" style="border-radius:0 1rem 1rem 0;">
                 <div class="p-4 form-style-5" style="border-radius: 1rem;">
                     <h5 class="mb-4"><span class="number">1</span> User Information</h5>
                     <div class="row">
@@ -71,8 +76,25 @@ const toggleEditProfile = () => {
             </div>
 
         </div>
-        <div v-else class="col-md-8 ">
-            <div class="card" style="border-radius:0 1rem 1rem 0;">
+        <div v-else class="row">
+            <div class="col-md-4 d-flex justify-content-center align-items-center"
+                style="border-radius: 1rem 0 0 1rem;background-color:white;">
+                <div class="container d-flex justify-content-center">
+                    <div class=" image d-flex flex-column justify-content-center align-items-center">
+                        <div class="justify-content-center align-items-center d-flex mb-4"
+                            style="background-color:white;border-radius:50%;height:150px;width:150px; ">
+                            <img src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg"
+                                style="background-color:white;border-radius:50%;height:150px;width:150px; " />
+                        </div>
+                        <div class=" d-flex flex-row justify-content-center align-items-center gap-2  mt-4">
+                            <div class=" d-flex"> <!-- HTML !-->
+                                <button class="button-31" role="button" @click="toggleEditProfile">Edit Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-8 " style="border-radius:0 1rem 1rem 0;">
                 <div class="card-header pb-0">
                     <div class="d-flex align-items-center">
                     </div>
@@ -123,6 +145,17 @@ const toggleEditProfile = () => {
 </template>
 
 <style scoped>
+
+input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    
+}
 col-md-8 {
     padding-left: 0 !important;
 }

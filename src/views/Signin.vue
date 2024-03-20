@@ -7,9 +7,8 @@ import ArgonInput from "@/components/ArgonInput.vue";
 import ArgonSwitch from "@/components/ArgonSwitch.vue";
 import ArgonButton from "@/components/ArgonButton.vue";
 import { useRouter } from "vue-router";
-const body = document.getElementsByTagName("body")[0];
-
 const router = useRouter();
+const body = document.getElementsByTagName("body")[0];
 const store = useStore();
 
 onBeforeMount(() => {
@@ -36,21 +35,20 @@ function signIn() {
 // Method to navigate to the appropriate page based on the selected role
 function navigateToRolePage(role) {
   if (role === "Issuer") {
-    router.push("/billing");
+    localStorage.setItem("role", "Issuer");
+    router.push("/issuer/crowdfundmanage");
   } else if (role === "Investor") {
-    router.push("/profile");
+    localStorage.setItem("role", "Investor");
+    router.push("/generallist");
   } else {
-    router.push("/usermanage");
+    localStorage.setItem("role", "Admin");
+    router.push("/generallist");
   }
 }
 
 // Example sign-in logic, replace this with your actual sign-in logic
 function getSelectedRole() {
-  // Assuming you have a form or some UI element to select the role
-  // In this example, let's say you have a dropdown with id "sharesOffered"
   const selectedRole = document.getElementById("sharesOffered").value;
-
-  // Return the selected role
   return selectedRole;
 }
 
