@@ -46,7 +46,7 @@ const clearSessionData = () => {
         :class="isRTL ? 'px-0' : 'me-sm-4'" id="navbar">
 
         <ul class="navbar-nav justify-content-end">
-          <li class="pe-lg-3 nav-item dropdown d-flex align-items-center">
+          <li class="px-lg-2 nav-item dropdown d-flex align-items-center">
             <a href="#" class="p-0 nav-link text-white" :class="[showMenu ? 'show' : '']" id="dropdownMenuButton"
               data-bs-toggle="dropdown" aria-expanded="false" @click="showMenu = !showMenu" @blur="closeMenu">
               <i class="cursor-pointer fa fa-bell"></i>
@@ -97,7 +97,7 @@ const clearSessionData = () => {
               </li>
             </ul>
           </li>
-          <li class="nav-item d-xl-none px-3 d-flex align-items-center">
+          <li class="nav-item d-xl-none px-2 d-flex align-items-center">
             <a href="#" @click="minimizeSidebar" class="p-0 nav-link text-white" id="iconNavbarSidenav">
               <div class="sidenav-toggler-inner">
                 <i class="sidenav-toggler-line bg-white"></i>
@@ -106,7 +106,7 @@ const clearSessionData = () => {
               </div>
             </a>
           </li>
-          <li class="nav-item d-flex align-items-center pe-3">
+          <li class="nav-item d-flex align-items-center px-2">
             <router-link :to="{ name: 'Signin' }" class="px-0 nav-link font-weight-bold text-white" @click="signOut">
               <span class="d-sm-inline d-none">Sign Out</span>
             </router-link>

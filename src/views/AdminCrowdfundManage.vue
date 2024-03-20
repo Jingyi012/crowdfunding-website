@@ -311,17 +311,25 @@ onMounted(() => {
 })
 
 </script>
-
+<style>
+  .nav-btn:not(.active) {
+    color: gray !important; /* Change the color to gray */
+  }
+  .nav-btn.active {
+    color: #344767 !important; /* Change the color to gray */
+    font-weight: 600 !important;
+}
+</style>
 <template>
     <div class="card m-4">
         <ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="pills-approved-tab" data-bs-toggle="pill"
+                <button class="nav-btn nav-link active" id="pills-approved-tab" data-bs-toggle="pill"
                     data-bs-target="#pills-approve" type="button" role="tab" aria-controls="pills-approve"
                     aria-selected="true">Approved</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-pending-tab" data-bs-toggle="pill" data-bs-target="#pills-pending"
+                <button class="nav-btn nav-link" id="pills-pending-tab" data-bs-toggle="pill" data-bs-target="#pills-pending"
                     type="button" role="tab" aria-controls="pills-pending" aria-selected="false">Pending</button>
             </li>
         </ul>

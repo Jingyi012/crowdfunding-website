@@ -1,10 +1,10 @@
 <script setup>
 import DonatorList from "./components/DonatorList.vue";
 import ArgonButton from "@/components/ArgonButton.vue";
-
-
+import Navbar from "@/examples/PageLayout/Navbar.vue";
 import { ref, onBeforeMount, onMounted, onBeforeUnmount } from "vue";
 import { useStore } from "vuex";
+import { useRouter } from "vue-router";
 
 import setNavPills from "@/assets/js/nav-pills.js";
 import setTooltip from "@/assets/js/tooltip.js";
@@ -14,49 +14,86 @@ const body = document.getElementsByTagName("body")[0];
 const store = useStore();
 const showdonation = ref(false);
 const role = ref(localStorage.getItem('role'));
-console.log(role.value);
 onMounted(() => {
-  store.state.isAbsolute = true;
   setNavPills();
   setTooltip();
+  role.value = localStorage.getItem('role');
 });
-if (role.value !== 'null') {
-  onBeforeMount(() => {
+
+onBeforeMount(() => {
+  role.value = localStorage.getItem('role');
+  console.log(role.value);
+  if (role.value !== 'null') {
     store.state.layout = "profile-overview";
     store.state.imageLayout = "profile-overview";
     store.state.showNavbar = true;
     store.state.showFooter = true;
     store.state.hideConfigButton = true;
     body.classList.add("profile-overview");
-  });
-  onBeforeUnmount(() => {
+  } else {
+    store.state.hideConfigButton = true;
+    store.state.showNavbar = false;
+    store.state.showSidenav = false;
+    store.state.showFooter = false;
+    body.classList.remove("bg-gray-100");
+  }
+})
+
+onBeforeUnmount(() => {
+  role.value = localStorage.getItem('role');
+  if (role.value !== 'null') {
     store.state.layout = "default";
     store.state.isAbsolute = false;
     store.state.imageLayout = "default";
     store.state.showNavbar = true;
     store.state.showFooter = true;
     store.state.hideConfigButton = false;
-    body.classList.remove("profile-overview");
-  });
-}
-else {
-  onBeforeMount(() => {
-    store.state.hideConfigButton = true;
-    store.state.showNavbar = false;
-    store.state.showSidenav = false;
-    store.state.showFooter = false;
-    body.classList.remove("bg-gray-100");
-  });
-  onBeforeUnmount(() => {
+    // body.classList.remove("profile-overview");
+  } else {
     store.state.hideConfigButton = false;
+    store.state.isAbsolute = false;
     store.state.showNavbar = true;
     store.state.showSidenav = true;
     store.state.showFooter = true;
-    body.classList.add("bg-gray-100");
-  });
-}
+    // body.classList.add("bg-gray-100");
+  }
+})
 
-
+// if (role.value !== 'null') {
+//   onBeforeMount(() => {
+//     store.state.layout = "profile-overview";
+//     store.state.imageLayout = "profile-overview";
+//     store.state.showNavbar = true;
+//     store.state.showFooter = true;
+//     store.state.hideConfigButton = true;
+//     body.classList.add("profile-overview");
+//   });
+//   onBeforeUnmount(() => {
+//     store.state.layout = "default";
+//     store.state.isAbsolute = false;
+//     store.state.imageLayout = "default";
+//     store.state.showNavbar = true;
+//     store.state.showFooter = true;
+//     store.state.hideConfigButton = false;
+//     body.classList.remove("profile-overview");
+//   });
+// }
+// else {
+//   onBeforeMount(() => {
+//     store.state.hideConfigButton = true;
+//     store.state.showNavbar = false;
+//     store.state.showSidenav = false;
+//     store.state.showFooter = false;
+//     body.classList.remove("bg-gray-100");
+//   });
+//   onBeforeUnmount(() => {
+//     store.state.hideConfigButton = false;
+//     store.state.showNavbar = true;
+//     store.state.showSidenav = true;
+//     store.state.showFooter = true;
+//     body.classList.add("bg-gray-100");
+//   });
+// }
 
 const selectedAmount = ref(null);
 
@@ -68,8 +105,13 @@ const updateSelectedAmount = () => {
   selectedAmount.value = selectedAmount.value ? parseInt(selectedAmount.value) : null;
 };
 
+const router = useRouter();
 const toggledonation = () => {
-  showdonation.value = !showdonation.value;
+  if (role.value !== 'null') {
+    showdonation.value = !showdonation.value;
+  } else {
+    router.push('/signin');
+  }
 };
 
 </script>
@@ -224,8 +266,6 @@ const toggledonation = () => {
       </p>
     </div>
     <div class="d-flex align-items-center justify-content-center mt-4">
-
-
       <button id="paynowbutton" @click="toggledonation"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
           fill="currentColor" class="bi bi-wallet-fill" style="margin-right:5px;" viewBox="0 0 16 16">
           <path
@@ -234,7 +274,6 @@ const toggledonation = () => {
             d="M16 6.5h-5.551a2.7 2.7 0 0 1-.443 1.042C9.613 8.088 8.963 8.5 8 8.5s-1.613-.412-2.006-.958A2.7 2.7 0 0 1 5.551 6.5H0v6A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5z" />
         </svg>Pay Now</button>
     </div>
-
   </div>
 
 
@@ -292,6 +331,7 @@ const toggledonation = () => {
   z-index: 99999;
   padding: 2rem;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 10px;
 }
 
 .checkbox-wrapper-46 input[type="checkbox"] {
