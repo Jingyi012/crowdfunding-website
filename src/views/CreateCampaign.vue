@@ -35,8 +35,10 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
+  
   <main>
     <div class="container-fluid">
+      
       <div class="page-header min-height-300" style="
           background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signup-cover.jpg&quot;);
           margin-right: -24px;
@@ -44,8 +46,16 @@ onBeforeUnmount(() => {
         ">
         <span class="mask bg-gradient-success opacity-6"></span>
       </div>
+      
       <div class="card shadow-lg mt-n6">
+        
         <div class="card-header pb-0">
+          <div class="d-flex" style="float: right;">
+                <a href="/issuer/crowdfundmanage">
+                    <argon-button size="sm" class="ms-auto">Back</argon-button>
+                </a>
+            </div>
+            <br>
           <div class="d-flex align-items-center">
             <p class="mb-0">Create Campaign</p>
             <!-- <argon-button color="success" size="sm" class="ms-auto">Settings</argon-button> -->
