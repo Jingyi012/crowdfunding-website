@@ -19,7 +19,7 @@ defineProps({
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg top-0 z-index-3 position-absolute mt-4"
     :class="isBlur ? isBlur : 'shadow-none my-2 navbar-transparent w-100'">
-    <div class="container ps-2 pe-0">
+    <div class="container ps-2 pe-0 ">
       <router-link class="navbar-brand font-weight-bolder ms-lg-0 ms-3" :class="darkMode ? 'text-black' : 'text-white'"
         to="/">XiLiJiJi</router-link>
       <button class="shadow-none navbar-toggler ms-2" type="button" data-bs-toggle="collapse"

@@ -16,6 +16,7 @@ import Transaction from "../views/transaction.vue";
 import Certificate from "../views/Certificate.vue";
 import UserManage from "../views/UserManage.vue";
 import VirtualReality from "../views/VirtualReality.vue";
+import issuerCrowdfundList from "../views/issuerCrowdfundList.vue";
 const routes = [
   {
     path: "/",
@@ -66,6 +67,11 @@ const routes = [
     path: "/crowdfundmanage",
     name: "AdminCrowdfundManage",
     component: AdminCrowdfundManage,
+  },
+  {
+    path: "/issuer/crowdfundmanage",
+    name: "issuerCrowdfundList",
+    component: issuerCrowdfundList,
   },
   {
     path: "/usermanage",

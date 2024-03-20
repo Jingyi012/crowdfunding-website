@@ -58,15 +58,18 @@ const transactionList = [{
       </div>
     </div>
   </div>
-  <main class="mt-4 main-content">
+  <main class="main-content">
     <section>
-      <div class="min-height-400 d-flex justify-content-center align-items-center w-100"
-        :class="`${darkMode ? 'bg-transparent' : ''}`">
+      <div class="min-height-400 d-flex justify-content-center align-items-center w-100 top-0 "
+        :class="`${darkMode ? 'bg-transparent' : ''}`" style="
+        background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signup-cover.jpg&quot;);
+        background-position: top;
+      ">
         <div class="pt-8">
-          <h1 class="text-black text-center">
+          <h1 class="text-black text-center text-white">
             XiLiJiJi
           </h1>
-          <p class="text-black text-center">
+          <p class="text-black text-center text-white">
             Empowering Dreams, Secured by Blockchain
           </p>
         </div>
@@ -74,7 +77,7 @@ const transactionList = [{
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div class="row py-6">
+            <div class="row" style="padding: 5rem 0;">
               <div class="col-lg-3 col-md-6 col-12">
                 <mini-statistics-card title="ECF PROJECTs" value="3" description="<span
                 class='text-sm font-weight-bolder text-success'
@@ -143,7 +146,7 @@ const transactionList = [{
                 <carousel />
               </div>
             </div>
-            <div class="row mt-4">
+            <div class="row mt-5">
               <div class="col-lg-7 mb-lg-0 mb-4">
                 <div class="card px-3">
                   <div class="p-3 pb-0 card-header">

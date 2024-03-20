@@ -38,7 +38,7 @@ onBeforeUnmount(() => {
     <section>
       <div class="page-header min-vh-100">
         <div class="container">
-          <div class="row">
+          <div class="row pt-6">
             <div class="mx-auto col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0">
               <div class="card card-plain">
                 <div class="pb-0 card-header text-start">

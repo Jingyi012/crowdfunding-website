@@ -29,41 +29,19 @@ const closeMenu = () => {
 <template>
   <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl"
     :class="isRTL ? 'top-0 position-sticky z-index-sticky' : ''" v-bind="$attrs" id="navbarBlur" data-scroll="true">
-    <div class="px-3 py-1 container-fluid">
+    <div class="px-3 py-1 container-fluid ">
       <breadcrumbs :current-page="currentRouteName" />
 
-      <div class="mt-2 collapse navbar-collapse mt-sm-0 me-md-0 me-sm-4" :class="isRTL ? 'px-0' : 'me-sm-4'"
-        id="navbar">
-        <div class="pe-md-3 d-flex align-items-center" :class="isRTL ? 'me-md-auto' : 'ms-md-auto'">
-          <div class="input-group">
-            <span class="input-group-text text-body">
-              <i class="fas fa-search" aria-hidden="true"></i>
-            </span>
-            <input type="text" class="form-control" :placeholder="isRTL ? 'أكتب هنا...' : 'Type here...'" />
-          </div>
-        </div>
+      <div class="d-flex justify-content-end mt-2 collapse navbar-collapse mt-sm-0 me-md-0 me-sm-4"
+        :class="isRTL ? 'px-0' : 'me-sm-4'" id="navbar">
+
         <ul class="navbar-nav justify-content-end">
-          <li class="nav-item d-flex align-items-center">
-            <router-link :to="{ name: 'Signin' }" class="px-0 nav-link font-weight-bold text-white">
-              <i class="fa fa-user me-sm-2"></i>
-              <span class="d-sm-inline d-none">Sign Out</span>
-            </router-link>
-          </li>
-          <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-            <a href="#" @click="minimizeSidebar" class="p-0 nav-link text-white" id="iconNavbarSidenav">
-              <div class="sidenav-toggler-inner">
-                <i class="sidenav-toggler-line bg-white"></i>
-                <i class="sidenav-toggler-line bg-white"></i>
-                <i class="sidenav-toggler-line bg-white"></i>
-              </div>
-            </a>
-          </li>
-          <li class="ps-3 nav-item dropdown d-flex align-items-center pe-2">
+          <li class="pe-lg-3 nav-item dropdown d-flex align-items-center">
             <a href="#" class="p-0 nav-link text-white" :class="[showMenu ? 'show' : '']" id="dropdownMenuButton"
               data-bs-toggle="dropdown" aria-expanded="false" @click="showMenu = !showMenu" @blur="closeMenu">
               <i class="cursor-pointer fa fa-bell"></i>
             </a>
-            <ul class="px-2 py-3 dropdown-menu dropdown-menu-end me-sm-n4" :class="showMenu ? 'show' : ''"
+            <ul class="py-3 dropdown-menu dropdown-menu-end me-sm-n4" :class="showMenu ? 'show' : ''"
               aria-labelledby="dropdownMenuButton">
               <li class="mb-2">
                 <a class="dropdown-item border-radius-md" href="javascript:;">
@@ -108,6 +86,20 @@ const closeMenu = () => {
                 </router-link>
               </li>
             </ul>
+          </li>
+          <li class="nav-item d-xl-none px-3 d-flex align-items-center">
+            <a href="#" @click="minimizeSidebar" class="p-0 nav-link text-white" id="iconNavbarSidenav">
+              <div class="sidenav-toggler-inner">
+                <i class="sidenav-toggler-line bg-white"></i>
+                <i class="sidenav-toggler-line bg-white"></i>
+                <i class="sidenav-toggler-line bg-white"></i>
+              </div>
+            </a>
+          </li>
+          <li class="nav-item d-flex align-items-center pe-3">
+            <router-link :to="{ name: 'Signin' }" class="px-0 nav-link font-weight-bold text-white">
+              <span class="d-sm-inline d-none">Sign Out</span>
+            </router-link>
           </li>
         </ul>
       </div>
