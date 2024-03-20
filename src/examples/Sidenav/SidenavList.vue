@@ -34,9 +34,16 @@ const getRoute = () => {
         </sidenav-item>
       </li>
       <li class="nav-item">
+        <sidenav-item to="/issuer/crowdfundmanage" :class="getRoute() === 'issuer/crowdfundmanage' ? 'active' : ''" navText="Manage">
+          <template v-slot:icon>
+            <i class="fas fa-list text-sm text-dark opacity-10 position-absolute" style="top: 6px;"></i>
+          </template>
+        </sidenav-item>
+      </li>
+      <li class="nav-item">
         <sidenav-item to="/createCampaign" :class="getRoute() === 'createCampaign' ? 'active' : ''" navText="Create">
           <template v-slot:icon>
-            <i class="fas fa-plus text-sm text-dark opacity-10 position-absolute"></i>
+            <i class="fas fa-plus text-sm text-dark opacity-10 position-absolute" style="top: 4px;"></i>
           </template>
         </sidenav-item>
       </li>

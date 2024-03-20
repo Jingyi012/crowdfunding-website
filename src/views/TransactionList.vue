@@ -57,6 +57,13 @@ const TransactionList = [
         receiver: "0x2221erwer4efrt382341",
         timestamp: "89 seconds ago",
         amount: 71
+    },
+    {
+        hash: "0x3142Osdad1231nwe12414312",
+        sender: "0x2256dfq424efrt382341",
+        receiver: "0x2221erwer4efrt382341",
+        timestamp: "89 seconds ago",
+        amount: 71
     }]
 </script>
 <template>
@@ -68,10 +75,6 @@ const TransactionList = [
             </div>
         </div>
     </div>
-    <div class="page-header align-items-start min-vh-50 pt-5 pb-11 position-absolute top-0 w-100" style="
-        background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signup-cover.jpg&quot;);
-        background-position: top;
-      "></div>
     <main class="mt-0 main-content">
         <section>
 
@@ -80,7 +83,19 @@ const TransactionList = [
                     <div class="col-12">
                         <div class="card mb-4">
                             <div class="card-header pb-0">
-                                <h3 class="mb-3">Donation</h3>
+                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                    <h3 class="">Donation</h3>
+                                    <div class="column d-flex justify-content-center gap-2 pt-2 pe-3">
+                                        <button type="button"
+                                            class="btn p-2 d-flex justify-content-center align-items-center">
+                                            <i class="ni ni-bold-left"></i>
+                                        </button>
+                                        <button type="button"
+                                            class="btn p-2 d-flex  justify-content-center align-items-center">
+                                            <i class="ni ni-bold-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
                                 <div class="pe-md-3 d-flex align-items-center ms-md-auto">
                                     <div class="input-group">
                                         <span class="input-group-text text-body">
@@ -93,7 +108,8 @@ const TransactionList = [
                             <div class="card-body px-0 pt-2 pb-2">
                                 <div class="px-lg-3 px-4">
                                     <div class="table-responsive p-0">
-                                        <table class="table align-items-center justify-content-center mb-0">
+                                        <table class="table align-items-center justify-content-center mb-0"
+                                            style="overflow-x: hidden;">
                                             <thead>
                                                 <tr>
                                                     <th
@@ -116,7 +132,6 @@ const TransactionList = [
                                                         class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                         Time
                                                     </th>
-                                                    <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -145,8 +160,9 @@ const TransactionList = [
                                                         </h6>
                                                     </td>
                                                     <td>
-                                                        <span class="text-xs font-weight-bold my-2">{{ item.timestamp
-                                                            }}</span>
+                                                        <span class="text-xs font-weight-bold my-2">
+                                                            {{ item.timestamp }}
+                                                        </span>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -158,16 +174,7 @@ const TransactionList = [
                     </div>
                 </div>
             </div>
-            <div>
-                <div class="column d-flex justify-content-center">
-                    <button type="button" class="btn p-3 d-flex  justify-content-center align-items-center">
-                        <i class="ni ni-bold-left"></i>
-                    </button>
-                    <button type="button" class="btn p-3 d-flex  justify-content-center align-items-center">
-                        <i class="ni ni-bold-right"></i>
-                    </button>
-                </div>
-            </div>
+
         </section>
     </main>
     <app-footer />

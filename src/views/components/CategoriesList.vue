@@ -41,10 +41,12 @@ defineProps({
               <span class="text-xs" v-html="description"> </span>
             </div>
           </div>
-          <div class="d-flex">
-            <button class="my-auto btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right">
-              <i :class="`ni ni-bold-right`" aria-hidden="true"></i>
-            </button>
+          <div class="d-flex me-2 justify-content-center">
+            <router-link class="d-flex" to="/crowdfundlist">
+              <button class="my-auto btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right">
+                <i :class="`ni ni-bold-right`" aria-hidden="true"></i>
+              </button>
+            </router-link>
           </div>
         </li>
       </ul>

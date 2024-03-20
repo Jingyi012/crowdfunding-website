@@ -94,7 +94,7 @@ const filterTransactions = (category) => {
   </div>
   <main class="mt-4 main-content">
     <section>
-      <div class="mt-8 d-flex justify-content-center align-items-center w-100"
+      <div style="margin-top: 8rem;" class="d-flex justify-content-center align-items-center w-100"
         :class="`${darkMode ? 'bg-transparent' : ''}`">
         <!-- admin -->
         <button type="button" class="btn" :class="{ 'btn-success': selectedCategory === 'Education' }"
@@ -113,7 +113,7 @@ const filterTransactions = (category) => {
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div class="row py-6">
+            <div class="row py-5">
               <div class="col-lg-4 col-md-6 col-12 px-3" v-for="(transaction, index) in filteredTransactions"
                 :key="index">
                 <CrowdFundCard :title="`${transaction.title}`" :category="`${transaction.category}`"
