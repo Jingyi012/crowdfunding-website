@@ -1,5 +1,6 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onBeforeMount, onBeforeUnmount  } from "vue";
+import { useStore } from "vuex";
 import CrowdFundCard from "./components/CrowdfundCard.vue";
 
 const transactionList = [{
@@ -57,6 +58,42 @@ const filterTransactions = (category) => {
         filteredTransactions.value = transactionList.filter(transaction => transaction.category === category);
     }
 };
+
+const role = ref(localStorage.getItem('role'));
+const store = useStore();
+onBeforeMount(() => {
+  role.value = localStorage.getItem('role');
+  console.log(role.value);
+  if (role.value !== 'null') {
+    store.state.showNavbar = true;
+    store.state.showFooter = true;
+    store.state.hideConfigButton = true;
+  } else {
+    store.state.hideConfigButton = true;
+    store.state.showNavbar = false;
+    store.state.showSidenav = false;
+    store.state.showFooter = false;
+  }
+})
+
+onBeforeUnmount(() => {
+  role.value = localStorage.getItem('role');
+  if (role.value !== 'null') {
+    store.state.layout = "default";
+    store.state.isAbsolute = false;
+    store.state.imageLayout = "default";
+    store.state.showNavbar = true;
+    store.state.showFooter = true;
+    store.state.hideConfigButton = false;
+  } else {
+    store.state.hideConfigButton = false;
+    store.state.isAbsolute = false;
+    store.state.showNavbar = true;
+    store.state.showSidenav = true;
+    store.state.showFooter = true;
+    // body.classList.add("bg-gray-100");
+  }
+})
 
 </script>
 

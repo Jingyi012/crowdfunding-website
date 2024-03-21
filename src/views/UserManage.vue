@@ -1,6 +1,7 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeMount, onBeforeUnmount } from 'vue';
 import { useRouter } from 'vue-router';
+import { useStore } from "vuex";
 const temp = ref([
     {
         "username": "john_doe",
@@ -160,6 +161,42 @@ function sliceTempArray() {
 onMounted(() => {
     setMaxPageSize();
     sliceTempArray();
+})
+
+const role = ref(localStorage.getItem('role'));
+const store = useStore();
+onBeforeMount(() => {
+  role.value = localStorage.getItem('role');
+  console.log(role.value);
+  if (role.value !== 'null') {
+    store.state.showNavbar = true;
+    store.state.showFooter = true;
+    store.state.hideConfigButton = true;
+  } else {
+    store.state.hideConfigButton = true;
+    store.state.showNavbar = false;
+    store.state.showSidenav = false;
+    store.state.showFooter = false;
+  }
+})
+
+onBeforeUnmount(() => {
+  role.value = localStorage.getItem('role');
+  if (role.value !== 'null') {
+    store.state.layout = "default";
+    store.state.isAbsolute = false;
+    store.state.imageLayout = "default";
+    store.state.showNavbar = true;
+    store.state.showFooter = true;
+    store.state.hideConfigButton = false;
+  } else {
+    store.state.hideConfigButton = false;
+    store.state.isAbsolute = false;
+    store.state.showNavbar = true;
+    store.state.showSidenav = true;
+    store.state.showFooter = true;
+    // body.classList.add("bg-gray-100");
+  }
 })
 
 </script>

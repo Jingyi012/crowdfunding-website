@@ -16,6 +16,9 @@ defineProps({
     default: "",
   },
 });
+
+const role = computed(() => localStorage.getItem('role'))
+
 </script>
 <template>
   <nav aria-label="breadcrumb">
@@ -26,20 +29,12 @@ defineProps({
       }`"
     >
       <li class="text-sm breadcrumb-item">
-        <a
-          v-if="isRTL"
-          class="opacity-5 ps-2"
-          href="#"
-          :class="isNavFixed ? 'text-dark' : 'text-white'"
-          >لوحات القيادة</a
-        >
-        <a
-          v-else
+        <a 
           :class="isNavFixed ? 'text-dark' : 'text-white'"
           class="opacity-8"
-          href="#"
-          >Pages</a
-        >
+          :href="`${role !== 'null' ? '/generallist' : '/dashboard-default'}`"
+          >Pages
+        </a>
       </li>
       <li
         class="text-sm breadcrumb-item active"
