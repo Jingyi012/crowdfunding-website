@@ -59,42 +59,6 @@ onBeforeUnmount(() => {
   }
 })
 
-// if (role.value !== 'null') {
-//   onBeforeMount(() => {
-//     store.state.layout = "profile-overview";
-//     store.state.imageLayout = "profile-overview";
-//     store.state.showNavbar = true;
-//     store.state.showFooter = true;
-//     store.state.hideConfigButton = true;
-//     body.classList.add("profile-overview");
-//   });
-//   onBeforeUnmount(() => {
-//     store.state.layout = "default";
-//     store.state.isAbsolute = false;
-//     store.state.imageLayout = "default";
-//     store.state.showNavbar = true;
-//     store.state.showFooter = true;
-//     store.state.hideConfigButton = false;
-//     body.classList.remove("profile-overview");
-//   });
-// }
-// else {
-//   onBeforeMount(() => {
-//     store.state.hideConfigButton = true;
-//     store.state.showNavbar = false;
-//     store.state.showSidenav = false;
-//     store.state.showFooter = false;
-//     body.classList.remove("bg-gray-100");
-//   });
-//   onBeforeUnmount(() => {
-//     store.state.hideConfigButton = false;
-//     store.state.showNavbar = true;
-//     store.state.showSidenav = true;
-//     store.state.showFooter = true;
-//     body.classList.add("bg-gray-100");
-//   });
-// }
-
 const selectedAmount = ref(null);
 
 const selectAmount = (amount) => {
