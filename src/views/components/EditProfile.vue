@@ -26,7 +26,7 @@ const toggleEditProfile = () => {
                             <div class=" d-flex flex-column"> <!-- HTML !-->
                                 <div class="button-31" style="margin-bottom: 20px;">
                                     <span>Upload Photo</span>
-                                    <input type="file" class="upload-file-button" onchange="handleFileUpload(this)">
+                                    <input type="file" class="upload-file-button">
                                 </div>
                                 <button class="button-31" role="button" @click="toggleEditProfile">Save Profile</button>
                             </div>
