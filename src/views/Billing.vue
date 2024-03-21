@@ -18,6 +18,7 @@ onMounted(() => {
   setNavPills();
   setTooltip();
   role.value = localStorage.getItem('role');
+  store.state.isAbsolute = true;
 });
 
 onBeforeMount(() => {
@@ -29,6 +30,7 @@ onBeforeMount(() => {
     store.state.showNavbar = true;
     store.state.showFooter = true;
     store.state.hideConfigButton = true;
+    store.state.isAbsolute = true;
     body.classList.add("profile-overview");
   } else {
     store.state.hideConfigButton = true;
@@ -48,7 +50,7 @@ onBeforeUnmount(() => {
     store.state.showNavbar = true;
     store.state.showFooter = true;
     store.state.hideConfigButton = false;
-    // body.classList.remove("profile-overview");
+    body.classList.remove("profile-overview");
   } else {
     store.state.hideConfigButton = false;
     store.state.isAbsolute = false;
