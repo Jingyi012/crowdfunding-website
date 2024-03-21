@@ -35,8 +35,8 @@ const routes = [
     component: Tables,
   },
   {
-    path: "/billing",
-    name: "Billing",
+    path: "/campaign-detail",
+    name: "campaigndetail",
     component: Billing,
   },
   {
@@ -88,12 +88,13 @@ const routes = [
     path: "/transactionlist",
     name: "Transactions",
     component: TransactionList,
-  }
-  ,{
+  },
+  {
     path: "/createCampaign",
     name: "createCampaign",
     component: createCampaign,
-  },{
+  },
+  {
     path: "/info",
     name: "Information",
     component: Information,
@@ -104,8 +105,8 @@ const routes = [
     component: CrowdfundList,
   },
   {
-    path: "/transaction",
-    name: "transaction",
+    path: "/investment",
+    name: "investment",
     component: Transaction,
   },
   {

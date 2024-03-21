@@ -86,7 +86,7 @@ const togglerefund = () => {
                     <div class="col-12">
                         <div class="card mb-4">
                             <div class="card-header pb-0">
-                                <h3>Crowdfunding List</h3>
+                                <h3>Investment List</h3>
                             </div>
                             <div class="card-body px-0 pt-0 pb-2">
                                 <div class="table-responsive p-0">
@@ -130,7 +130,7 @@ const togglerefund = () => {
                                                 <td>
 
                                                     <p class="text-sm font-weight-bold mb-0 t-xxs"
-                                                        style="margin-left:15px!important;"> {{
+                                                        style="margin-left:20px!important;"> {{
                                                 item.receiver }}</p>
 
 
