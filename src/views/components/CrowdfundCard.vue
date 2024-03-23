@@ -31,7 +31,7 @@ defineProps({
 });
 </script>
 <template>
-    <router-link class="nav-link text-dark" to="/billing">
+    <router-link class="nav-link text-dark" to="/campaign-detail">
         <div class="card card-profile mb-6 ">
             <div>
                 <img src="../../assets/img/bg-profile.jpg" alt="Image placeholder" class="card-img-top" />

@@ -18,6 +18,7 @@ onMounted(() => {
   setNavPills();
   setTooltip();
   role.value = localStorage.getItem('role');
+  store.state.isAbsolute = true;
 });
 
 onBeforeMount(() => {
@@ -29,6 +30,7 @@ onBeforeMount(() => {
     store.state.showNavbar = true;
     store.state.showFooter = true;
     store.state.hideConfigButton = true;
+    store.state.isAbsolute = true;
     body.classList.add("profile-overview");
   } else {
     store.state.hideConfigButton = true;
@@ -48,7 +50,7 @@ onBeforeUnmount(() => {
     store.state.showNavbar = true;
     store.state.showFooter = true;
     store.state.hideConfigButton = false;
-    // body.classList.remove("profile-overview");
+    body.classList.remove("profile-overview");
   } else {
     store.state.hideConfigButton = false;
     store.state.isAbsolute = false;
@@ -58,42 +60,6 @@ onBeforeUnmount(() => {
     // body.classList.add("bg-gray-100");
   }
 })
-
-// if (role.value !== 'null') {
-//   onBeforeMount(() => {
-//     store.state.layout = "profile-overview";
-//     store.state.imageLayout = "profile-overview";
-//     store.state.showNavbar = true;
-//     store.state.showFooter = true;
-//     store.state.hideConfigButton = true;
-//     body.classList.add("profile-overview");
-//   });
-//   onBeforeUnmount(() => {
-//     store.state.layout = "default";
-//     store.state.isAbsolute = false;
-//     store.state.imageLayout = "default";
-//     store.state.showNavbar = true;
-//     store.state.showFooter = true;
-//     store.state.hideConfigButton = false;
-//     body.classList.remove("profile-overview");
-//   });
-// }
-// else {
-//   onBeforeMount(() => {
-//     store.state.hideConfigButton = true;
-//     store.state.showNavbar = false;
-//     store.state.showSidenav = false;
-//     store.state.showFooter = false;
-//     body.classList.remove("bg-gray-100");
-//   });
-//   onBeforeUnmount(() => {
-//     store.state.hideConfigButton = false;
-//     store.state.showNavbar = true;
-//     store.state.showSidenav = true;
-//     store.state.showFooter = true;
-//     body.classList.add("bg-gray-100");
-//   });
-// }
 
 const selectedAmount = ref(null);
 

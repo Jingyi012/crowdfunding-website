@@ -7,7 +7,7 @@ const temp = ref([
     {
         campaignName: 'Educate360 ',
         name: 'ABC Company',
-        purpose: 'Education',
+        purpose: 'Service',
         description: 'description ......',
         startDate: '21 Jan 2024',
         endDate: '21 Apr 2024',
@@ -28,7 +28,7 @@ const temp = ref([
     {
         campaignName: 'BizBoost',
         name: 'DEF Company',
-        purpose: 'Business',
+        purpose: 'E-Commerce',
         description: 'description ......',
         startDate: '22 Jan 2024',
         endDate: '21 Jun 2024',
@@ -38,7 +38,7 @@ const temp = ref([
     {
         campaignName: 'Caring',
         name: 'GHI Company',
-        purpose: 'Charity',
+        purpose: 'Service',
         description: 'description ......',
         startDate: '1 Jan 2024',
         endDate: '23 Apr 2024',
@@ -48,7 +48,7 @@ const temp = ref([
     {
         campaignName: 'Help Victim',
         name: 'JKL Company',
-        purpose: 'Charity',
+        purpose: 'Service',
         description: 'description ......',
         startDate: '1 Jan 2024',
         endDate: '29 Apr 2024',
@@ -58,7 +58,7 @@ const temp = ref([
     {
         campaignName: 'AI Technology',
         name: 'MNO Company',
-        purpose: 'Business',
+        purpose: 'Technology',
         description: 'description ......',
         startDate: '1 Jan 2024',
         endDate: '16 Apr 2024',
@@ -68,7 +68,7 @@ const temp = ref([
     {
         campaignName: 'AI for rakyat',
         name: 'PQR Company',
-        purpose: 'Education',
+        purpose: 'Service',
         description: 'description ......',
         startDate: '1 Jan 2024',
         endDate: '16 Apr 2024',
@@ -78,7 +78,7 @@ const temp = ref([
     {
         campaignName: 'AI for rakyat',
         name: 'PQR Company',
-        purpose: 'Education',
+        purpose: 'Service',
         description: 'description ......',
         startDate: '1 Jan 2024',
         endDate: '16 Apr 2024',
@@ -169,7 +169,7 @@ const temp2 = ref([
     {
         campaignName: 'Educate360 ',
         name: 'ABC Company',
-        purpose: 'Education',
+        purpose: 'Service',
         description: 'description ......',
         startDate: '21 Jan 2024',
         endDate: '21 Apr 2024',
@@ -190,7 +190,7 @@ const temp2 = ref([
     {
         campaignName: 'BizBoost',
         name: 'DEF Company',
-        purpose: 'Business',
+        purpose: 'E-Commerce',
         description: 'description ......',
         startDate: '22 Jan 2024',
         endDate: '21 Jun 2024',
@@ -200,7 +200,7 @@ const temp2 = ref([
     {
         campaignName: 'Caring',
         name: 'GHI Company',
-        purpose: 'Charity',
+        purpose: 'Service',
         description: 'description ......',
         startDate: '1 Jan 2024',
         endDate: '23 Apr 2024',
@@ -210,7 +210,7 @@ const temp2 = ref([
     {
         campaignName: 'Help Victim',
         name: 'JKL Company',
-        purpose: 'Charity',
+        purpose: 'Service',
         description: 'description ......',
         startDate: '1 Jan 2024',
         endDate: '29 Apr 2024',
@@ -220,7 +220,7 @@ const temp2 = ref([
     {
         campaignName: 'AI Technology',
         name: 'MNO Company',
-        purpose: 'Business',
+        purpose: 'Technology',
         description: 'description ......',
         startDate: '1 Jan 2024',
         endDate: '16 Apr 2024',
@@ -230,7 +230,7 @@ const temp2 = ref([
     {
         campaignName: 'AI for rakyat',
         name: 'PQR Company',
-        purpose: 'Education',
+        purpose: 'Service',
         description: 'description ......',
         startDate: '1 Jan 2024',
         endDate: '16 Apr 2024',
@@ -240,7 +240,7 @@ const temp2 = ref([
     {
         campaignName: 'AI for rakyat',
         name: 'PQR Company',
-        purpose: 'Education',
+        purpose: 'Service',
         description: 'description ......',
         startDate: '1 Jan 2024',
         endDate: '16 Apr 2024',
@@ -250,7 +250,7 @@ const temp2 = ref([
     {
         campaignName: 'AI for rakyat',
         name: 'PQR Company',
-        purpose: 'Education',
+        purpose: 'Service',
         description: 'description ......',
         startDate: '1 Jan 2024',
         endDate: '16 Apr 2024',
@@ -473,7 +473,7 @@ onMounted(() => {
                                         <h6 class="item">Ongoing</h6>
                                     </td>
                                     <td>
-                                        <router-link class="btn mb-0" to="/billing"><i
+                                        <router-link class="btn mb-0" to="/campaign-detail"><i
                                                 class="fas fa-info-circle"></i></router-link>
                                         <button type="button" class="btn mb-0 ms-3" data-bs-toggle="modal"
                                             :data-bs-target="'#row' + index"><i class="fas fa-edit"></i></button>

@@ -35,8 +35,8 @@ const routes = [
     component: Tables,
   },
   {
-    path: "/billing",
-    name: "Billing",
+    path: "/campaign-detail",
+    name: "campaigndetail",
     component: Billing,
   },
   {
@@ -88,12 +88,13 @@ const routes = [
     path: "/transactionlist",
     name: "Transactions",
     component: TransactionList,
-  }
-  ,{
+  },
+  {
     path: "/createCampaign",
     name: "createCampaign",
     component: createCampaign,
-  },{
+  },
+  {
     path: "/info",
     name: "Information",
     component: Information,
@@ -104,8 +105,8 @@ const routes = [
     component: CrowdfundList,
   },
   {
-    path: "/transaction",
-    name: "transaction",
+    path: "/investment",
+    name: "investment",
     component: Transaction,
   },
   {
@@ -118,17 +119,18 @@ const routes = [
     name: "certificate",
     component: Certificate,
   },
-  {
-    path: "/certificate",
-    name: "certificate",
-    component: Certificate,
-  },
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
   linkActiveClass: "active",
+});
+
+router.beforeEach((to, from, next) => {
+  // Scroll to the top of the page
+  window.scrollTo(0, 0);
+  next();
 });
 
 export default router;

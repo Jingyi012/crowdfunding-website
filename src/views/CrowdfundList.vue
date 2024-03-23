@@ -26,44 +26,44 @@ onBeforeUnmount(() => {
 });
 
 const transactionList = [{
-  title: "Artificial Intelligence",
-  category: "Charity",
-  objective: "To enhance experience",
-  goal: 2,
-  raised: 1233,
-  investor: 3,
+  title: "Educate360",
+  category: "Service",
+  objective: "To educate people",
+  goal: 80000,
+  raised: 7000000,
+  investor: 4,
   status: "Open"
 }, {
-  title: "Artificial Intelligence",
-  category: "Business",
-  objective: "To enhance experience",
-  goal: 2,
-  raised: 1233,
-  investor: 3,
+  title: "BizBoost",
+  category: "E-Commerce",
+  objective: " Elevate, Expand, Excel!",
+  goal: 60000,
+  raised: 3000000,
+  investor: 2,
   status: "Open"
 }, {
-  title: "Artificial Intelligence",
-  category: "Education",
+  title: "Caring",
+  category: "Service",
   objective: "To enhance experience",
-  goal: 2,
-  raised: 1233,
+  goal: 8000000,
+  raised: 10000000,
   investor: 3,
   status: "Closed"
 }, {
-  title: "Artificial Intelligence",
-  category: "Business",
+  title: "AI Technology",
+  category: "Technology",
   objective: "To enhance experience",
-  goal: 2,
-  raised: 1233,
+  goal: 10000000,
+  raised: 15000000,
   investor: 3,
   status: "Closed"
 }, {
-  title: "Artificial Intelligence",
-  category: "Charity",
-  objective: "To enhance experience",
-  goal: 2,
-  raised: 1233,
-  investor: 3,
+  title: "Help Victim",
+  category: "Service",
+  objective: "Together, We Rebuild Lives.",
+  goal: 700000,
+  raised: 13000000,
+  investor: 2,
   status: "Closed"
 },];
 
@@ -97,17 +97,17 @@ const filterTransactions = (category) => {
       <div style="margin-top: 8rem;" class="d-flex justify-content-center align-items-center w-100"
         :class="`${darkMode ? 'bg-transparent' : ''}`">
         <!-- admin -->
-        <button type="button" class="btn" :class="{ 'btn-success': selectedCategory === 'Education' }"
-          @click="filterTransactions('Education')">
-          Education
+        <button type="button" class="btn" :class="{ 'btn-success': selectedCategory === 'E-Commerce' }"
+          @click="filterTransactions('E-Commerce')">
+          E-Commerce
         </button>
-        <button type="button" class="btn mx-3" :class="{ 'btn-success': selectedCategory === 'Business' }"
-          @click="filterTransactions('Business')">
-          Business
+        <button type="button" class="btn mx-3" :class="{ 'btn-success': selectedCategory === 'Service' }"
+          @click="filterTransactions('Service')">
+          Service
         </button>
-        <button type="button" class="btn" :class="{ 'btn-success': selectedCategory === 'Charity' }"
-          @click="filterTransactions('Charity')">
-          Charity
+        <button type="button" class="btn" :class="{ 'btn-success': selectedCategory === 'Technology' }"
+          @click="filterTransactions('Technology')">
+          Technology
         </button>
       </div>
       <div class="container">

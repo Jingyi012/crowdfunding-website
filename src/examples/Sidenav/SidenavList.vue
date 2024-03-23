@@ -24,7 +24,7 @@ const sessionData = ref(localStorage.getItem('role'));
       <li class="nav-item">
         <sidenav-item to="/generallist" :class="getRoute() === 'generallist' ? 'active' : ''" navText="List">
           <template v-slot:icon>
-            <i class="ni ni-collection text-info text-sm opacity-10"></i>
+            <i class="ni ni-collection text-dark text-sm opacity-10"></i>
           </template>
         </sidenav-item>
       </li>
@@ -70,13 +70,6 @@ const sessionData = ref(localStorage.getItem('role'));
         </sidenav-item>
       </li>
       <!-- user -->
-      <li class="nav-item" v-if="sessionData === 'Investor'">
-        <sidenav-item to="/transaction" :class="getRoute() === 'transaction' ? 'active' : ''" navText="History">
-          <template v-slot:icon>
-            <i class="ni ni-app text-info text-sm opacity-10"></i>
-          </template>
-        </sidenav-item>
-      </li>
       <li class="mt-3 nav-item" v-if="sessionData === 'Investor'">
         <h6 class="text-xs ps-4 text-uppercase font-weight-bolder opacity-6 ms-2">
           ACCOUNT
@@ -86,6 +79,13 @@ const sessionData = ref(localStorage.getItem('role'));
         <sidenav-item to="/profile" :class="getRoute() === 'profile' ? 'active' : ''" navText="Profile">
           <template v-slot:icon>
             <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
+          </template>
+        </sidenav-item>
+      </li>
+      <li class="nav-item" v-if="sessionData === 'Investor'">
+        <sidenav-item to="/investment" :class="getRoute() === 'investment' ? 'active' : ''" navText="Investment">
+          <template v-slot:icon>
+            <i class="ni ni-app text-dark text-sm opacity-10"></i>
           </template>
         </sidenav-item>
       </li>

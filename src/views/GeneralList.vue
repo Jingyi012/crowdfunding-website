@@ -1,46 +1,47 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onBeforeMount, onBeforeUnmount } from "vue";
+import { useStore } from "vuex";
 import CrowdFundCard from "./components/CrowdfundCard.vue";
 
 const transactionList = [{
-    title: "Artificial Intelligence",
-    category: "Charity",
-    objective: "To enhance experience",
-    goal: 2,
-    raised: 1233,
-    investor: 3,
+    title: "Educate360",
+    category: "Service",
+    objective: "To educate people",
+    goal: 80000,
+    raised: 7000000,
+    investor: 4,
     status: "Open"
 }, {
-    title: "Artificial Intelligence",
-    category: "Business",
-    objective: "To enhance experience",
-    goal: 2,
-    raised: 1233,
-    investor: 3,
+    title: "BizBoost",
+    category: "E-Commerce",
+    objective: " Elevate, Expand, Excel!",
+    goal: 60000,
+    raised: 3000000,
+    investor: 2,
     status: "Open"
 }, {
-    title: "Artificial Intelligence",
-    category: "Education",
+    title: "Caring",
+    category: "Service",
     objective: "To enhance experience",
-    goal: 2,
-    raised: 1233,
+    goal: 8000000,
+    raised: 10000000,
     investor: 3,
     status: "Closed"
 }, {
-    title: "Artificial Intelligence",
-    category: "Business",
+    title: "AI Technology",
+    category: "Technology",
     objective: "To enhance experience",
-    goal: 2,
-    raised: 1233,
+    goal: 10000000,
+    raised: 15000000,
     investor: 3,
     status: "Closed"
 }, {
-    title: "Artificial Intelligence",
-    category: "Charity",
-    objective: "To enhance experience",
-    goal: 2,
-    raised: 1233,
-    investor: 3,
+    title: "Help Victim",
+    category: "Service",
+    objective: "Together, We Rebuild Lives.",
+    goal: 700000,
+    raised: 13000000,
+    investor: 2,
     status: "Closed"
 },];
 
@@ -58,6 +59,42 @@ const filterTransactions = (category) => {
     }
 };
 
+const role = ref(localStorage.getItem('role'));
+const store = useStore();
+onBeforeMount(() => {
+    role.value = localStorage.getItem('role');
+    console.log(role.value);
+    if (role.value !== 'null') {
+        store.state.showNavbar = true;
+        store.state.showFooter = true;
+        store.state.hideConfigButton = true;
+    } else {
+        store.state.hideConfigButton = true;
+        store.state.showNavbar = false;
+        store.state.showSidenav = false;
+        store.state.showFooter = false;
+    }
+})
+
+onBeforeUnmount(() => {
+    role.value = localStorage.getItem('role');
+    if (role.value !== 'null') {
+        store.state.layout = "default";
+        store.state.isAbsolute = false;
+        store.state.imageLayout = "default";
+        store.state.showNavbar = true;
+        store.state.showFooter = true;
+        store.state.hideConfigButton = false;
+    } else {
+        store.state.hideConfigButton = false;
+        store.state.isAbsolute = false;
+        store.state.showNavbar = true;
+        store.state.showSidenav = true;
+        store.state.showFooter = true;
+        // body.classList.add("bg-gray-100");
+    }
+})
+
 </script>
 
 <template>
@@ -66,17 +103,17 @@ const filterTransactions = (category) => {
         <div class="d-flex justify-content-center align-items-center w-100 mt-3"
             :class="`${darkMode ? 'bg-transparent' : ''}`">
             <!-- admin -->
-            <button type="button" class="btn" :class="{ 'btn-success': selectedCategory === 'Education' }"
-                @click="filterTransactions('Education')">
-                Education
+            <button type="button" class="btn" :class="{ 'btn-success': selectedCategory === 'E-Commerce' }"
+                @click="filterTransactions('E-Commerce')">
+                E-Commerce
             </button>
-            <button type="button" class="btn mx-3" :class="{ 'btn-success': selectedCategory === 'Business' }"
-                @click="filterTransactions('Business')">
-                Business
+            <button type="button" class="btn mx-3" :class="{ 'btn-success': selectedCategory === 'Service' }"
+                @click="filterTransactions('Service')">
+                Service
             </button>
-            <button type="button" class="btn" :class="{ 'btn-success': selectedCategory === 'Charity' }"
-                @click="filterTransactions('Charity')">
-                Charity
+            <button type="button" class="btn" :class="{ 'btn-success': selectedCategory === 'Technology' }"
+                @click="filterTransactions('Technology')">
+                Technology
             </button>
         </div>
         <div class="container">

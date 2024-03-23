@@ -6,7 +6,7 @@ const temp = ref([
     {
         campaignName: 'Help Victim',
         name: 'JKL Company',
-        purpose: 'Charity',
+        purpose: 'Service',
         description: 'description ......',
         startDate: '1 Jan 2024',
         endDate: '29 Apr 2024',

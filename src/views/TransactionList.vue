@@ -26,42 +26,42 @@ const TransactionList = [
     {
         hash: "0x3142Osdad1231nwe12414312",
         sender: "0x2256dfq424efrt382341",
-        receiver: "0x2221erwer4efrt382341",
+        receiver: "Educate360",
         timestamp: "56 seconds ago",
         amount: 78
     },
     {
         hash: "0x3142Osdad1231nwe12414312",
         sender: "0x2256dfq424efrt382341",
-        receiver: "0x2221erwer4efrt382341",
+        receiver: "BizBoost",
         timestamp: "56 seconds ago",
         amount: 78
     },
     {
         hash: "0x3142O2132we333312414312",
         sender: "0x2256dfq424efrt382341",
-        receiver: "0x2221123123efrt382341",
+        receiver: "AI Technology",
         timestamp: "57 seconds ago",
         amount: 123
     },
     {
         hash: "0x311231232333nwe12414312",
         sender: "0x2256dfq424e565656341",
-        receiver: "0x2221er12333332311341",
+        receiver: "Caring",
         timestamp: "59 seconds ago",
         amount: 344
     },
     {
         hash: "0x3142Osdad1231nwe12414312",
         sender: "0x2256dfq424efrt382341",
-        receiver: "0x2221erwer4efrt382341",
+        receiver: "Help Victim",
         timestamp: "89 seconds ago",
         amount: 71
     },
     {
         hash: "0x3142Osdad1231nwe12414312",
         sender: "0x2256dfq424efrt382341",
-        receiver: "0x2221erwer4efrt382341",
+        receiver: "Caring",
         timestamp: "89 seconds ago",
         amount: 71
     }]
@@ -84,7 +84,7 @@ const TransactionList = [
                         <div class="card mb-4">
                             <div class="card-header pb-0">
                                 <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <h3 class="">Donation</h3>
+                                    <h3 class="">Investment</h3>
                                     <div class="column d-flex justify-content-center gap-2 pt-2 pe-3">
                                         <button type="button"
                                             class="btn p-2 d-flex justify-content-center align-items-center">

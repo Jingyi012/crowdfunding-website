@@ -36,7 +36,7 @@ function signIn() {
 function navigateToRolePage(role) {
   if (role === "Issuer") {
     localStorage.setItem("role", "Issuer");
-    router.push("/issuer/crowdfundmanage");
+    router.push("/generallist");
   } else if (role === "Investor") {
     localStorage.setItem("role", "Investor");
     router.push("/generallist");

@@ -1,97 +1,75 @@
-
 <template>
   <div class="card card-carousel overflow-hidden h-100 p-0">
-    <div
-      id="carouselExampleCaptions"
-      class="carousel slide h-100"
-      data-bs-ride="carousel"
-    >
+    <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
       <div class="carousel-inner border-radius-lg h-100">
-        <div
-          class="carousel-item h-100 active"
-          :style="{
-            backgroundImage:
-              'url(' + require('@/assets/img/carousel-1.jpg') + ')',
-            backgroundSize: 'cover',
-          }"
-        >
-          <div
-            class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5"
-          >
-            <div
-              class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3"
-            >
+        <div class="carousel-item h-100 active" :style="{
+          backgroundImage:
+            'url(' + require('@/assets/img/carousel-1.jpg') + ')',
+          backgroundSize: 'cover',
+        }">
+          <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+            <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
               <i class="ni ni-camera-compact text-dark opacity-10"></i>
             </div>
-            <h5 class="text-white mb-1">Get started with Argon</h5>
+            <h5 class="text-white mb-1">Immutable and Transparency</h5>
             <p>
-              There’s nothing I really wanted to do in life that I wasn’t able
-              to get good at.
+              Leverage blockchain for transparent, tamper-proof transaction recording.
             </p>
           </div>
         </div>
-        <div
-          class="carousel-item h-100"
-          :style="{
-            backgroundImage:
-              'url(' + require('@/assets/img/carousel-2.jpg') + ')',
-            backgroundSize: 'cover',
-          }"
-        >
-          <div
-            class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5"
-          >
-            <div
-              class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3"
-            >
+        <div class="carousel-item h-100" :style="{
+          backgroundImage:
+            'url(' + require('@/assets/img/carousel-2.jpg') + ')',
+          backgroundSize: 'cover',
+        }">
+          <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+            <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
               <i class="ni ni-bulb-61 text-dark opacity-10"></i>
             </div>
-            <h5 class="text-white mb-1">Faster way to create web pages</h5>
+            <h5 class="text-white mb-1">Smart contract applied</h5>
             <p>
-              That’s my skill. I’m not really specifically talented at anything
-              except for the ability to learn.
+              Implement strict criteria for fund release based on verified milestones.
             </p>
           </div>
         </div>
-        <div
-          class="carousel-item h-100"
-          :style="{
-            backgroundImage:
-              'url(' + require('@/assets/img/carousel-3.jpg') + ')',
-            backgroundSize: 'cover',
-          }"
-        >
-          <div
-            class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5"
-          >
-            <div
-              class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3"
-            >
+        <div class="carousel-item h-100" :style="{
+          backgroundImage:
+            'url(' + require('@/assets/img/carousel-3.jpg') + ')',
+          backgroundSize: 'cover',
+        }">
+          <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+            <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
               <i class="ni ni-trophy text-dark opacity-10"></i>
             </div>
-            <h5 class="text-white mb-1">Share with us your design tips!</h5>
+            <h5 class="text-white mb-1">Cryptographic Security</h5>
             <p>
-              Don’t be afraid to be wrong because you can’t learn anything from
-              a compliment.
+              Enhance security to prevent unauthorized access and fraud, fostering trust.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item h-100" :style="{
+          backgroundImage:
+            'url(' + require('@/assets/img/carousel2.png') + ')',
+          backgroundSize: 'cover',
+        }">
+          <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+            <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+              <i class="ni ni-building text-dark opacity-10"></i>
+            </div>
+            <h5 class="text-white mb-1">Tokenization</h5>
+            <p>
+              Tokenize assets on blockchain for transparent ownership.
             </p>
           </div>
         </div>
       </div>
-      <button
-        class="carousel-control-prev w-5 me-3"
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="prev"
-      >
+      <button class="carousel-control-prev w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button
-        class="carousel-control-next w-5 me-3"
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="next"
-      >
+      <button class="carousel-control-next w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
