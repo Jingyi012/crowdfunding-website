@@ -54,7 +54,7 @@ defineProps({
             <div class="row px-3 pb-4">
                 <div class="col-12 d-flex justify-content-center">
                     <div class="d-grid text-center justify-content-center col-4">
-                        <span class="text-lg font-weight-bolder">${{ goal }}</span>
+                        <span class="text-lg font-weight-bolder">RM{{ goal }}</span>
                         <span class="text-sm" :class="{ 'opacity-8': status !== 'Closed' }">Goals</span>
                     </div>
                     <div class="d-grid text-center justify-content-center  col-4">
@@ -62,7 +62,7 @@ defineProps({
                         <span class="text-sm" :class="{ 'opacity-8': status !== 'Closed' }">Investor</span>
                     </div>
                     <div class="d-grid text-center justify-content-center col-4">
-                        <span class="text-lg font-weight-bolder">${{ raised }}</span>
+                        <span class="text-lg font-weight-bolder">RM{{ raised }}</span>
                         <span class="text-sm" :class="{ 'opacity-8': status !== 'Closed' }">Raised</span>
                     </div>
                 </div>

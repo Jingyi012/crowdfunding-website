@@ -29,40 +29,40 @@ const transactionList = [{
   title: "Educate360",
   category: "Service",
   objective: "To educate people",
-  goal: 80000,
-  raised: 7000000,
+  goal: 7000000,
+  raised: 80000,
   investor: 4,
   status: "Open"
 }, {
   title: "BizBoost",
   category: "E-Commerce",
   objective: " Elevate, Expand, Excel!",
-  goal: 60000,
-  raised: 3000000,
+  goal: 3000000,
+  raised: 60000,
   investor: 2,
   status: "Open"
 }, {
   title: "Caring",
   category: "Service",
   objective: "To enhance experience",
-  goal: 8000000,
-  raised: 10000000,
+  goal: 10000000,
+  raised: 8000000,
   investor: 3,
   status: "Closed"
 }, {
   title: "AI Technology",
   category: "Technology",
   objective: "To enhance experience",
-  goal: 10000000,
-  raised: 15000000,
+  goal: 15000000,
+  raised: 10000000,
   investor: 3,
   status: "Closed"
 }, {
   title: "Help Victim",
   category: "Service",
   objective: "Together, We Rebuild Lives.",
-  goal: 700000,
-  raised: 13000000,
+  goal: 13000000,
+  raised: 700000,
   investor: 2,
   status: "Closed"
 },];
