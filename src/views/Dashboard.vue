@@ -31,21 +31,21 @@ const transactionList = [{
   sender: "0x2256dfq424efrt382341",
   receiver: "Educate360",
   timestamp: "56",
-  amount: 78
+  amount: 8000
 },
 {
   hash: "0x3142Osdad1231nwe12414312",
   sender: "0x2256dfq424efrt382341",
   receiver: "BizBoost",
   timestamp: "56",
-  amount: 78
+  amount: 7000
 },
 {
   hash: "0x3142O2132we333312414312",
   sender: "0x2256dfq424efrt382341",
   receiver: "AI Technology",
   timestamp: "57",
-  amount: 123
+  amount: 10000
 },];// Log VueSession object
 </script>
 <template>
@@ -181,7 +181,7 @@ const transactionList = [{
                           </td>
                           <td>
                             <div class="text-center">
-                              <h6 class="mb-0 text-sm">${{ transaction.amount }}</h6>
+                              <h6 class="mb-0 text-sm">RM{{ transaction.amount }}</h6>
                             </div>
                           </td>
                           <td class="text-sm align-middle">

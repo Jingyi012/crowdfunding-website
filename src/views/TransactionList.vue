@@ -28,42 +28,42 @@ const TransactionList = [
         sender: "0x2256dfq424efrt382341",
         receiver: "Educate360",
         timestamp: "56 seconds ago",
-        amount: 78
+        amount: 8000
     },
     {
         hash: "0x3142Osdad1231nwe12414312",
         sender: "0x2256dfq424efrt382341",
         receiver: "BizBoost",
         timestamp: "56 seconds ago",
-        amount: 78
+        amount: 7000
     },
     {
         hash: "0x3142O2132we333312414312",
         sender: "0x2256dfq424efrt382341",
         receiver: "AI Technology",
         timestamp: "57 seconds ago",
-        amount: 123
+        amount: 10000
     },
     {
         hash: "0x311231232333nwe12414312",
         sender: "0x2256dfq424e565656341",
         receiver: "Caring",
         timestamp: "59 seconds ago",
-        amount: 344
+        amount: 20000
     },
     {
         hash: "0x3142Osdad1231nwe12414312",
         sender: "0x2256dfq424efrt382341",
         receiver: "Help Victim",
         timestamp: "89 seconds ago",
-        amount: 71
+        amount: 8000
     },
     {
         hash: "0x3142Osdad1231nwe12414312",
         sender: "0x2256dfq424efrt382341",
         receiver: "Caring",
         timestamp: "89 seconds ago",
-        amount: 71
+        amount: 7000
     }]
 </script>
 <template>
@@ -156,7 +156,7 @@ const TransactionList = [
                                                     </td>
 
                                                     <td>
-                                                        <h6 class="text-sm font-weight-bold my-2">${{ item.amount }}
+                                                        <h6 class="text-sm font-weight-bold my-2">RM{{ item.amount }}
                                                         </h6>
                                                     </td>
                                                     <td>
