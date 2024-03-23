@@ -43,41 +43,5 @@ defineProps({
 
       <p v-else class="text-xs font-weight-bold">Please check our docs</p>
     </div>
-
-    <a
-      v-if="isRTL"
-      href="https://www.creative-tim.com/learning-lab/vue/overview/argon-dashboard/"
-      target="_blank"
-      class="mb-3 btn btn-dark btn-sm w-100"
-    >
-      توثيق
-    </a>
-
-    <a
-      v-else
-      href="https://www.creative-tim.com/learning-lab/vue/overview/argon-dashboard/"
-      target="_blank"
-      class="mb-3 btn btn-dark btn-sm w-100"
-    >
-      Documentation
-    </a>
-
-    <a
-      v-if="isRTL"
-      href="https://www.creative-tim.com/product/vue-argon-dashboard-pro"
-      target="_blank"
-      class="mb-3 btn btn-success btn-sm w-100"
-    >
-      التطور للاحترافية
-    </a>
-
-    <a
-      v-else
-      href="https://www.creative-tim.com/product/vue-argon-dashboard-pro"
-      target="_blank"
-      class="mb-3 btn btn-success btn-sm w-100"
-    >
-      Upgrade to pro
-    </a>
   </div>
 </template>
