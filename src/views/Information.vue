@@ -128,9 +128,12 @@ const blogPosts = [
                       <h5 class="card-title">{{ video.title }}</h5>
                       <p class="card-text">{{ video.description }}</p>
                     </div>
-                    <div class="embed-responsive embed-responsive-16by9">
-                      <iframe class="embed-responsive-item mb-3 rounded" :src="getEmbedUrl(video.videoUrl)"
+                    <div class="embed-responsive embed-responsive-16by9" >
+                      <center>
+                        <iframe class="embed-responsive-item mb-3 rounded" :src="getEmbedUrl(video.videoUrl)"
                         allowfullscreen></iframe>
+                      </center>
+                      
                     </div>
                   </div>
                 </div>
