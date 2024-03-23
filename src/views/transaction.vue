@@ -67,7 +67,7 @@ const redirectToCertificate = () => {
 
 const redirectToBill = () => {
 
-    router.push('/billing');
+    router.push('/campaign-detail');
 };
 
 const refund = ref(false);
