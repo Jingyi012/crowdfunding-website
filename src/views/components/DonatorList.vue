@@ -2,11 +2,11 @@
 import { ref } from 'vue';
 
 const temp = ref([
-  { name: 'John Doe', time: '27 March 2020, at 12:30 PM', amount: 500 },
-  { name: 'Jane Smith', time: '28 March 2020, at 1:45 PM', amount: 500 },
-  { name: 'Michael Johnson', time: '29 March 2020, at 3:00 PM', amount: 500 },
-  { name: 'Emily Brown', time: '30 March 2020, at 2:15 PM', amount: 500 },
-  { name: 'David Wilson', time: '31 March 2020, at 4:30 PM', amount: 500 },
+  { name: 'John Doe', time: '27 March 2020, at 12:30 PM', amount: 160000 },
+  { name: 'Jane Smith', time: '28 March 2020, at 1:45 PM', amount: 160000 },
+  { name: 'Michael Johnson', time: '29 March 2020, at 3:00 PM', amount: 160000 },
+  { name: 'Emily Brown', time: '30 March 2020, at 2:15 PM', amount: 160000 },
+  { name: 'David Wilson', time: '31 March 2020, at 4:30 PM', amount: 160000 },
 ]);
 </script>
 <template>
@@ -44,7 +44,7 @@ const temp = ref([
             </div>
           </div>
           <div class="d-flex align-items-center text-success">
-            + {{ Math.abs(donation.amount) }} ETH </div>
+            + RM {{ Math.abs(donation.amount) }}  </div>
         </li>
       </ul>
 

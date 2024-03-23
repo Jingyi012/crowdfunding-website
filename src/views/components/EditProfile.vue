@@ -6,7 +6,7 @@ const toggleEditProfile = () => {
     editProfile.value = !editProfile.value;
 };
 
-
+const sessionData = ref(localStorage.getItem('role'));
 </script>
 <template>
 
@@ -57,11 +57,19 @@ const toggleEditProfile = () => {
                     </div>
                     <hr />
                     <h5 class="mb-4"><span class="number">2</span> Contact Information</h5>
-                    <div class="row"> 
-                        <div class="col-md-12">
-                            <label for="example-text-input" class="form-control-label">Wallet Address</label>
-                            <div class="my-3" >
-                                <button class="button-31">Connect to your Metamask Wallet</button>
+                    <div class="row">
+                        <div class="col-md-12 row mb-1">
+                            <div class="col-md-7">
+                                <label for="example-text-input" class="form-control-label">Wallet Address</label>
+                                <button class="button-31">Connect to Metamask</button>
+                            </div>
+                            <div class="col-md-5" v-if="sessionData === 'Issuer'">
+                                <label for="example-text-input" class="form-control-label">Documentation</label>
+                                <div class="button-31" style="margin-bottom: 20px;">
+                                    <span>Upload Document</span>
+                                    <input type="file" class="upload-file-button">
+                                </div>
+
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -72,6 +80,7 @@ const toggleEditProfile = () => {
                             <label for="example-text-input" class="form-control-label">Email Address</label>
                             <input type="text" value="jesse@example.com" />
                         </div>
+
                     </div>
 
                 </div>

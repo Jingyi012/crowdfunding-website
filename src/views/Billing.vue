@@ -112,7 +112,7 @@ const toggledonation = () => {
                 <div class="row">
                   <div class="col-6 flex-column align-items-center">
                     <h4>Education 360</h4>
-                    <p>Redefining Food, Beverage and Hospitality</p>
+                    <p>To Educate People</p>
                   </div>
 
 
@@ -136,21 +136,21 @@ const toggledonation = () => {
                     <div
                       class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-column">
                       <h3>Our Goal</h3>
-                      <h6>100000ETH</h6>
+                      <h6>RM7000000</h6>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div
                       class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-column">
                       <h3>Raised</h3>
-                      <h6>5000ETH</h6>
+                      <h6>RM80000</h6>
                     </div>
                   </div>
                   <div class="col-md-4 mb-md-0 mb-4">
                     <div
                       class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-column">
                       <h3>Completed</h3>
-                      <h6>50%</h6>
+                      <h6>1.14%</h6>
                     </div>
                   </div>
                 </div>
@@ -171,17 +171,18 @@ const toggledonation = () => {
               <h6>About the investment</h6>
               <hr />
               <p class="text-sm mb-0">Investment Deadline</p>
-              <p class="text-sm" style="color:black;font-weight:bold">21 March 2024</p>
+              <p class="text-sm" style="color:black;font-weight:bold">21 March 2025</p>
               <p class="text-sm mb-0">Investment Price Per Share</p>
-              <p class="text-sm" style="color:black;font-weight:bold">50ETH</p>
+              <p class="text-sm" style="color:black;font-weight:bold">12</p>
               <p class="text-sm mb-0">Investment Target Amount</p>
-              <p class="text-sm" style="color:black;font-weight:bold">10000ETH</p>
+              <p class="text-sm" style="color:black;font-weight:bold">RM7000000</p>
               <p class="text-sm mb-0">Investment Valuation</p>
-              <p class="text-sm" style="color:black;font-weight:bold">10000ETH</p>
+              <p class="text-sm" style="color:black;font-weight:bold">RM50000000</p>
               <p class="text-sm mb-0">Minimum Investment</p>
-              <p class="text-sm" style="color:black;font-weight:bold">500ETH</p>
+              <p class="text-sm" style="color:black;font-weight:bold">RM1000</p>
               <p class="text-sm mb-0">Maximum Investment</p>
-              <p class="text-sm" style="color:black;font-weight:bold">99995</p>
+              <p class="text-sm" style="color:black;font-weight:bold">RM699994
+                </p>
               <p class="text-sm mb-0">Minimum Number of Shares Offered</p>
               <p class="text-sm" style="color:black;font-weight:bold">2555</p>
               <p class="text-sm mb-0">Maximum Number of Shares Offered</p>
@@ -214,11 +215,12 @@ const toggledonation = () => {
       </svg></div>
     <h4 style="margin-left:10px">Investment amount</h4>
 
-    <button id="button" :class="{ 'selected': selectedAmount === 100 }" @click="selectAmount(500)">500 ETH</button>
-    <button id="button" :class="{ 'selected': selectedAmount === 200 }" @click="selectAmount(5000)">5000 ETH</button>
-    <button id="button" :class="{ 'selected': selectedAmount === 300 }" @click="selectAmount(99995)">9000 ETH</button>
-
-    <input class="donationamount" v-model="selectedAmount" @input="updateSelectedAmount" placeholder="Amount" />ETH
+    <button id="button" :class="{ 'selected': selectedAmount === 100 }" @click="selectAmount(5000)">5000</button>
+    <button id="button" :class="{ 'selected': selectedAmount === 200 }" @click="selectAmount(300000)">300000</button>
+    <button id="button" :class="{ 'selected': selectedAmount === 300 }" @click="selectAmount(699994)">699994 </button>
+<div>
+    RM<input class="donationamount" v-model="selectedAmount" @input="updateSelectedAmount" placeholder="Amount" />
+  </div>
     <div class="d-flex align-items-center mt-3" style="margin-left:10px">
       <div class="checkbox-wrapper-46">
         <input class="inp-cbx" id="cbx-46" type="checkbox" />

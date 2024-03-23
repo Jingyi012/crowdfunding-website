@@ -17,7 +17,7 @@ function downloadCertificate() {
 
 const redirectBack = () => {
 
-router.push('/transaction'); // Redirect to /certificate page
+router.push('/investment'); // Redirect to /certificate page
 };
 </script>
 <template>
