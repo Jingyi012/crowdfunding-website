@@ -130,7 +130,7 @@ const togglerefund = () => {
                                                 <td>
 
                                                     <p class="text-sm font-weight-bold mb-0 t-xxs"
-                                                        style="margin-left:15px!important;"> {{
+                                                        style="margin-left:20px!important;"> {{
                                                 item.receiver }}</p>
 
 
