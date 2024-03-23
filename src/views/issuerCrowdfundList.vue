@@ -13,7 +13,7 @@ const temp = ref([
         fundRaised: 74199,
         target: 1000000
     },
-    
+
 ]);
 
 const sortBy = ref(null);
@@ -165,7 +165,7 @@ function sortData(criteria) {
                                 <h6 class="item">Ongoing</h6>
                             </td>
                             <td>
-                                <router-link class="btn mb-0" to="/billing"><i
+                                <router-link class="btn mb-0" to="/campaign-detail"><i
                                         class="fas fa-info-circle"></i></router-link>
                                 <button type="button" class="btn mb-0 ms-3" data-bs-toggle="modal"
                                     :data-bs-target="'#row' + index"><i class="fas fa-edit"></i></button>

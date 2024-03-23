@@ -88,7 +88,7 @@ const transactionList = [{
         }" />
               </div>
               <div class="col-lg-3 col-md-6 col-12">
-                <mini-statistics-card title="RAISED" value="$54,000" description="<span
+                <mini-statistics-card title="RAISED" value="RM54,000" description="<span
                 class='text-sm font-weight-bolder text-success'
                 >+3%</span> since last week" :icon="{
           component: 'ni ni-money-coins',
