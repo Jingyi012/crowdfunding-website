@@ -132,4 +132,10 @@ const router = createRouter({
   linkActiveClass: "active",
 });
 
+router.beforeEach((to, from, next) => {
+  // Scroll to the top of the page
+  window.scrollTo(0, 0);
+  next();
+});
+
 export default router;

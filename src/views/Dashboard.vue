@@ -29,21 +29,21 @@ onBeforeUnmount(() => {
 const transactionList = [{
   hash: "0x3142Osdad1231nwe12414312",
   sender: "0x2256dfq424efrt382341",
-  receiver: "R3 Printing",
+  receiver: "Educate360",
   timestamp: "56",
   amount: 78
 },
 {
   hash: "0x3142Osdad1231nwe12414312",
   sender: "0x2256dfq424efrt382341",
-  receiver: "WiGL",
+  receiver: "BizBoost",
   timestamp: "56",
   amount: 78
 },
 {
   hash: "0x3142O2132we333312414312",
   sender: "0x2256dfq424efrt382341",
-  receiver: "Gameflip",
+  receiver: "AI Technology",
   timestamp: "57",
   amount: 123
 },];// Log VueSession object
@@ -202,7 +202,7 @@ const transactionList = [{
               component: 'ni ni-mobile-button',
               background: 'dark',
             },
-            label: 'Education',
+            label: 'E-Commerce',
             description: '13 closed <strong>32 open</strong>',
           },
           {
@@ -210,12 +210,12 @@ const transactionList = [{
               component: 'ni ni-tag',
               background: 'dark',
             },
-            label: 'Business',
+            label: 'Service',
             description: '123 closed <strong>15 open</strong>',
           },
           {
             icon: { component: 'ni ni-box-2', background: 'dark' },
-            label: 'Charity',
+            label: 'Technology',
             description: '3 closed <strong>25 open</strong>',
           },
         ]" />
