@@ -61,7 +61,7 @@ const sessionData = ref(localStorage.getItem('role'));
                         <div class="col-md-12 row mb-1">
                             <div class="col-md-7">
                                 <label for="example-text-input" class="form-control-label">Wallet Address</label>
-                                <button class="button-31">Connect to Metamask</button>
+                                <button class="button-31" style="margin-bottom: 20px;">Connect to Metamask</button>
                             </div>
                             <div class="col-md-5" v-if="sessionData === 'Issuer'">
                                 <label for="example-text-input" class="form-control-label">Documentation</label>
