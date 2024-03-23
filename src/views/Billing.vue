@@ -111,7 +111,7 @@ const toggledonation = () => {
               <div class="card-header pb-0 p-3">
                 <div class="row">
                   <div class="col-6 flex-column align-items-center">
-                    <h4>Kasturi Capital Holding</h4>
+                    <h4>Education 360</h4>
                     <p>Redefining Food, Beverage and Hospitality</p>
                   </div>
 
