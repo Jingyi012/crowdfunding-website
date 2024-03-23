@@ -6,7 +6,7 @@ const toggleEditProfile = () => {
     editProfile.value = !editProfile.value;
 };
 
-
+const sessionData = ref(localStorage.getItem('role'));
 </script>
 <template>
 
@@ -58,9 +58,19 @@ const toggleEditProfile = () => {
                     <hr />
                     <h5 class="mb-4"><span class="number">2</span> Contact Information</h5>
                     <div class="row">
-                        <div class="col-md-12">
-                            <label for="example-text-input" class="form-control-label">Wallet Address</label>
-                            <input type="text" value="0x5585555444" />
+                        <div class="col-md-12 row mb-1">
+                            <div class="col-md-7">
+                                <label for="example-text-input" class="form-control-label">Wallet Address</label>
+                                <button class="button-31" style="margin-bottom: 20px;">Connect to Metamask</button>
+                            </div>
+                            <div class="col-md-5" v-if="sessionData === 'Issuer'">
+                                <label for="example-text-input" class="form-control-label">Documentation</label>
+                                <div class="button-31" style="margin-bottom: 20px;">
+                                    <span>Upload Document</span>
+                                    <input type="file" class="upload-file-button">
+                                </div>
+
+                            </div>
                         </div>
                         <div class="col-md-4">
                             <label for="example-text-input" class="form-control-label">Phone Number</label>
@@ -70,6 +80,7 @@ const toggleEditProfile = () => {
                             <label for="example-text-input" class="form-control-label">Email Address</label>
                             <input type="text" value="jesse@example.com" />
                         </div>
+
                     </div>
 
                 </div>
@@ -145,7 +156,6 @@ const toggleEditProfile = () => {
 </template>
 
 <style scoped>
-
 input[type="file"] {
     position: absolute;
     top: 0;
@@ -154,8 +164,9 @@ input[type="file"] {
     height: 100%;
     opacity: 0;
     cursor: pointer;
-    
+
 }
+
 col-md-8 {
     padding-left: 0 !important;
 }
@@ -274,7 +285,7 @@ col-md-8 {
 .form-style-5 input[type="url"]:focus,
 .form-style-5 textarea:focus,
 .form-style-5 select:focus {
-    background: #d2d9dd;
+    background: #e7e7e7;
 }
 
 .form-style-5 .number {
@@ -313,19 +324,19 @@ col-md-8 {
     background: #109177;
 }
 
-.col11{
+.col11 {
     border-radius: 1rem 0 0 1rem !important;
 }
 
-.col22{
-    border-radius:0 1rem 1rem 0 !important;
+.col22 {
+    border-radius: 0 1rem 1rem 0 !important;
 }
 
 @media screen and (max-width: 765px) {
     .col11 {
         border-radius: 1rem 1rem 0rem 0rem !important;
     }
-    
+
     .col22 {
         border-radius: 0rem 0rem 1rem 1rem !important;
     }
