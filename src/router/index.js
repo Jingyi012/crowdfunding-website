@@ -119,11 +119,6 @@ const routes = [
     name: "certificate",
     component: Certificate,
   },
-  {
-    path: "/certificate",
-    name: "certificate",
-    component: Certificate,
-  },
 ];
 
 const router = createRouter({
