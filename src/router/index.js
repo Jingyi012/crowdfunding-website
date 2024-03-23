@@ -6,17 +6,14 @@ import Dashboard from "../views/Dashboard.vue";
 import Information from "../views/Information.vue";
 import Notification from "../views/Notification.vue";
 import Profile from "../views/Profile.vue";
-import RTL from "../views/Rtl.vue";
 import Signin from "../views/Signin.vue";
 import Signup from "../views/Signup.vue";
-import Tables from "../views/Tables.vue";
 import TransactionList from "../views/TransactionList.vue";
 import CrowdfundList from "../views/CrowdfundList.vue";
 import Transaction from "../views/transaction.vue";
 import Certificate from "../views/Certificate.vue";
 import GeneralList from "../views/GeneralList.vue";
 import UserManage from "../views/UserManage.vue";
-import VirtualReality from "../views/VirtualReality.vue";
 import issuerCrowdfundList from "../views/issuerCrowdfundList.vue";
 const routes = [
   {
@@ -30,24 +27,9 @@ const routes = [
     component: Dashboard,
   },
   {
-    path: "/tables",
-    name: "Tables",
-    component: Tables,
-  },
-  {
     path: "/campaign-detail",
     name: "campaigndetail",
     component: Billing,
-  },
-  {
-    path: "/virtual-reality",
-    name: "Virtual Reality",
-    component: VirtualReality,
-  },
-  {
-    path: "/rtl-page",
-    name: "RTL",
-    component: RTL,
   },
   {
     path: "/profile",
