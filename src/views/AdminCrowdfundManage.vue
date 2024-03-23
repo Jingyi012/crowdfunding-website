@@ -8,11 +8,11 @@ const temp = ref([
         campaignName: 'Educate360 ',
         name: 'ABC Company',
         purpose: 'Service',
-        description: 'description ......',
+        description: 'To educate people',
         startDate: '21 Jan 2024',
         endDate: '21 Apr 2024',
-        fundRaised: 23431,
-        target: 1000000,
+        fundRaised: 80000,
+        target: 7000000,
         pricePerShare: 10,
         targetAmount: 1000,
         deadline: '2024-02-01T00:00',
@@ -29,21 +29,21 @@ const temp = ref([
         campaignName: 'BizBoost',
         name: 'DEF Company',
         purpose: 'E-Commerce',
-        description: 'description ......',
+        description: 'Elevate, Expand, Excel!',
         startDate: '22 Jan 2024',
         endDate: '21 Jun 2024',
-        fundRaised: 211131,
-        target: 2000000
+        fundRaised: 60000,
+        target: 3000000
     },
     {
         campaignName: 'Caring',
         name: 'GHI Company',
         purpose: 'Service',
-        description: 'description ......',
+        description: 'To enhance experience',
         startDate: '1 Jan 2024',
         endDate: '23 Apr 2024',
-        fundRaised: 13121,
-        target: 1000000
+        fundRaised: 8000000,
+        target: 10000000
     },
     {
         campaignName: 'Help Victim',
@@ -52,8 +52,8 @@ const temp = ref([
         description: 'description ......',
         startDate: '1 Jan 2024',
         endDate: '29 Apr 2024',
-        fundRaised: 74199,
-        target: 1000000
+        fundRaised: 700000,
+        target: 13000000
     },
     {
         campaignName: 'AI Technology',
@@ -167,7 +167,7 @@ onMounted(() => {
 /* Pending page */
 const temp2 = ref([
     {
-        campaignName: 'Educate360 ',
+        campaignName: 'Software Tech ',
         name: 'ABC Company',
         purpose: 'Service',
         description: 'description ......',
@@ -188,7 +188,7 @@ const temp2 = ref([
         sharesOffered: 'common'
     },
     {
-        campaignName: 'BizBoost',
+        campaignName: 'Business',
         name: 'DEF Company',
         purpose: 'E-Commerce',
         description: 'description ......',
