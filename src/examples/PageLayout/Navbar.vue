@@ -50,7 +50,7 @@ defineProps({
             <router-link class="nav-link me-2" to="/transactionlist">
               <i class="fa fa-exchange opacity-6 me-1" aria-hidden="true"
                 :class="isBlur ? 'text-dark' : 'text-white'"></i>
-              Transaction
+              Investment
             </router-link>
           </li>
           <li class="nav-item">

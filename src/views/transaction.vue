@@ -5,59 +5,11 @@ const router = useRouter();
 const TransactionList = [
     {
         hash: "0x3142Osdad1231nwe12414312",
-        receiver: "ABC Company",
+        receiver: "Educate360",
         timestamp: "1/4/2024",
-        amount: 78,
+        amount: 8000,
         share: 100,
         status: "Completed"
-    },
-    {
-        hash: "0x3142Osdad1231nwe12414312",
-        receiver: "ABC Company",
-        timestamp: "5/4/2024",
-        amount: 78,
-        share: 50,
-        status: "Completed"
-    },
-    {
-        hash: "0x3142O2132we333312414312",
-        receiver: "BDC Company",
-        timestamp: "5/3/2024",
-        amount: 123,
-        share: 75,
-        status: "Pending"
-    },
-    {
-        hash: "0x311231232333nwe12414312",
-        receiver: "BDC Company",
-        timestamp: "6/3/2024",
-        amount: 344,
-        share: 150,
-        status: "Completed"
-    },
-    {
-        hash: "0x3142Osdad1231nwe12414312",
-        receiver: "ABC Company",
-        timestamp: "20/4/2024",
-        amount: 71,
-        share: 120,
-        status: "Completed"
-    },
-    {
-        hash: "0x3142Osdad1231nwe12414312",
-        receiver: "ABC Company",
-        timestamp: "5/4/2024",
-        amount: 78,
-        share: 100,
-        status: "Refunded"
-    },
-    {
-        hash: "0x3142Osdad1231nwe12414312",
-        receiver: "ABC Company",
-        timestamp: "5/4/2024",
-        amount: 78,
-        share: 75,
-        status: "Pending"
     }]
 
 const redirectToCertificate = () => {
@@ -140,7 +92,7 @@ const togglerefund = () => {
                                                 </td>
 
                                                 <td>
-                                                    <h6 class="text-sm font-weight-bold">${{ item.amount }}</h6>
+                                                    <h6 class="text-sm font-weight-bold mb-0">RM{{ item.amount }}</h6>
                                                 </td>
                                                 <td>
                                                     <span class="text-sm font-weight-bold">{{ item.timestamp

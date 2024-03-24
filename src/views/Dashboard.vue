@@ -97,7 +97,7 @@ const transactionList = [{
         }" />
               </div>
               <div class="col-lg-3 col-md-6 col-12">
-                <mini-statistics-card title="TRANSACTIONS" value="+3,462" description="<span
+                <mini-statistics-card title="INVESTMENTS" value="+3,462" description="<span
                 class='text-sm font-weight-bolder text-danger'
                 >-2%</span> since last quarter" :icon="{
           component: 'ni  ni-paper-diploma',
@@ -135,7 +135,7 @@ const transactionList = [{
           ],
           datasets: [
             {
-              label: 'Mobile Apps',
+              label: 'Amount',
               data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
             },
           ],
